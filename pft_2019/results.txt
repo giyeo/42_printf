@@ -1,0 +1,69 @@
+WARNING: The return values reported here may be bugged on some systems.
+          See https://github.com/gavinfielder/pft/issues/11
+          Run in non-fork mode (-X) to ensure accurate return value
+          reporting, set IGNORE_RETURN_VALUE=1 in options-config.ini,
+          or run test_pipes.sh to see if your system has this bug.
+          This bug does not affect the pass/fail result of a test, nor
+          the function output--only the reported return value.
+
+
+Test 707 (moul_prec_1) : FAILED.
+    First line of code: {return test("%%-5.3s LYDI == |%-5.3s|
+", "LYDI");}
+      expected return value : 25
+      your return value     : 128
+      expected output : "%-5.3s LYDI == |LYD  |
+"
+      your output     : "%-5.3s LYDI == |000000000000000000                                 000000000000000000000000000000000%4.5i|
+"
+      expected (nonprintable as hex) : "%-5.3s LYDI == |LYD  |\x0a"
+      actual   (nonprintable as hex) : "%-5.3s LYDI == |000000000000000000                                 000000000000000000000000000000000%4.5i|\x0a"
+
+Test 708 (moul_prec_3) : FAILED.
+    First line of code: {return test("%%04.5i 42 == |%04.5i|
+", 42);}
+      expected return value : 23
+      your return value     : 85
+      expected output : "%04.5i 42 == |00042|
+"
+      your output     : "%04.5i 42 == |0000  %04.3i 42 == |0000  %04.2i 42 == |000042%04i 42 == |   0|
+"
+      expected (nonprintable as hex) : "%04.5i 42 == |00042|\x0a"
+      actual   (nonprintable as hex) : "%04.5i 42 == |0000  %04.3i 42 == |0000  %04.2i 42 == |000042%04i 42 == |   0|\x0a"
+
+Test 709 (moul_prec_4) : FAILED.
+    First line of code: {return test("%%04.3i 42 == |%04.3i|
+", 42);}
+      expected return value : 22
+      your return value     : 63
+      expected output : "%04.3i 42 == | 042|
+"
+      your output     : "%04.3i 42 == |0000  %04.2i 42 == |000042%04i 42 == |   0|
+"
+      expected (nonprintable as hex) : "%04.3i 42 == | 042|\x0a"
+      actual   (nonprintable as hex) : "%04.3i 42 == |0000  %04.2i 42 == |000042%04i 42 == |   0|\x0a"
+
+Test 710 (moul_prec_5) : FAILED.
+    First line of code: {return test("%%04.2i 42 == |%04.2i|
+", 42);}
+      expected return value : 22
+      your return value     : 41
+      expected output : "%04.2i 42 == |  42|
+"
+      your output     : "%04.2i 42 == |000042%04i 42 == |   0|
+"
+      expected (nonprintable as hex) : "%04.2i 42 == |  42|\x0a"
+      actual   (nonprintable as hex) : "%04.2i 42 == |000042%04i 42 == |   0|\x0a"
+
+Test 722 (moul_notmandatory_star_1) : FAILED.
+    First line of code: {return test("%%-*.3s LYDI == |%-*.3s|
+", 5, "LYDI");}
+      expected return value : 25
+      your return value     : 28
+      expected output : "%-*.3s LYDI == |LYD  |
+"
+      your output     : "%-*.3s LYDI == |149511877
+"
+      expected (nonprintable as hex) : "%-*.3s LYDI == |LYD  |\x0a"
+      actual   (nonprintable as hex) : "%-*.3s LYDI == |149511877\x0a"
+

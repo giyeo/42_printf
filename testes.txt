@@ -1,0 +1,74 @@
+/*
+	ft_printf("%1d\n", 563);
+	printf("%1d\n", 563);
+	ft_printf("%3d\n", 563);
+	printf("%3d\n", 563);
+	ft_printf("%4d\n", -563);
+	printf("%4d\n", -563);
+	ft_printf("%5d\n", 563);
+	printf("%5d\n", 563);
+	ft_printf("%5c\n", 'c');
+	printf("%5c\n", 'c');
+	ft_printf("%5s\n", "bom");
+	printf("%5s\n", "bom");
+	printf(" %d\n", ft_printf("%05d", 563));
+	printf(" %d\n", printf("%05d", 563));
+	ft_printf("%-5d %d\n", 23, 42);
+	printf("%-5d %d\n", 23, 42);
+	ft_printf("%%-i -42 == %-i\n", -42);
+	int r00 = 0;
+	ft_printf("Lalalala, %d%% des gens qui parlent à Ly adorent %s. Ou Presque. %p\n", 100, "Ly", &r00);
+	printf("Lalalala, %d%% des gens qui parlent à Ly adorent %s. Ou Presque. %p\n", 100, "Ly", &r00);
+	char *str = NULL;
+	printf("%d", printf("%s!", str));
+	printf("%d", ft_printf("%s!", str));
+	printf("\n"); 
+	printf("------------\n");
+	ft_printf("%u\n", 42);
+	printf("------------\n");
+	#include <limits.h>
+	ft_printf("Kashim a %u histoires à raconter\n", 1001);
+	ft_printf("Il fait au moins %u\n", -8000);
+	ft_printf("%u\n", -0);
+	ft_printf("%u\n", 0);
+	/*
+	ft_printf("%u\n", INT_MAX);
+	ft_printf("%u\n", INT_MIN);
+	ft_printf("%u\n", INT_MIN - 1);
+	ft_printf("%u\n", INT_MAX + 1);
+	ft_printf("%%u 0000042 == |%u|\n", 0000042);
+	ft_printf("%%u \t == |%u|\n", '\t');
+	ft_printf("%%u Lydie == |%u|\n", 'L'+'y'+'d'+'i'+'e');
+	//0-(number)   .* to do
+	ft_printf("-----------------\n");
+	ft_printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
+	ft_printf("%%04.5i 42 == |%04.5i|\n", 42);
+	ft_printf("%%04.3i 42 == |%04.3i|\n", 42);
+	ft_printf("%%04.2i 42 == |%04.2i|\n", 42);
+	ft_printf("-----------------\n");
+	ft_printf("%%-*.3s LYDI == |%-*.3s|\n", 5, "LYDI");
+	ft_printf("%%*i 42 == |%*i|\n", 5, 42);
+	ft_printf("%%*i 42 == |%*i|\n", 3, 42);
+	ft_printf("%%*i 42 == |%*i|\n", 2, 42);
+	ft_printf("-----------------\n");
+	ft_printf("%%0i 42 == |%0i|\n", 42);
+	ft_printf("%%0d 0000042 == |%0d|\n", 0000042);
+	printf("%%0i 42 == |%0i|\n", 42);
+	printf("%%0d 0000042 == |%0d|\n", 0000042);
+	ft_printf("-----------------\n");
+	ft_printf("%%-4d 42 == |%-4d|\n", 42);
+	printf("%%-4d 42 == |%-4d|\n", 42);
+	ft_printf("%%-5d -42 == |%-5d|\n", -42);
+	printf("%%-5d -42 == |%-5d|\n", -42);
+	ft_printf("|%3i|%-3i|\n", 42, 42);
+	printf("|%3i|%-3i|\n", 42, 42);
+	ft_printf("%%-4i 42 == |%-4i|\n", 42);
+	printf("%%-4i 42 == |%-4i|\n", 42);
+ 
+	ft_printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
+	ft_printf("\n");
+	printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
+
+	ft_printf("%%04.5i 42 == |%04.5i|\n", 42);
+	ft_printf("%%04.3i 42 == |%04.3i|\n", 42);
+	ft_printf("%%04.2i 42 == |%04.2i|\n", 42);*/
