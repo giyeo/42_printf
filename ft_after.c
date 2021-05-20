@@ -122,7 +122,7 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 	precision = 0;
 	if (parameter == 's' && global->precision_size > 0)
 	{
-		if (global->precision_size < ft_strlen((char *)pointer))
+		if (global->precision_size < (int)ft_strlen((char *)pointer))
 			precision = ft_substr((char *)pointer, 0, global->precision_size);
 	}
 	if (parameter == 's')

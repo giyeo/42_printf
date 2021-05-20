@@ -28,9 +28,6 @@ void	ft_putstr_fd(char *s, int fd)
 
 void	ft_putsomething(bool type, char c, char *s, struct var *global)
 {
-	int i;
-
-	i = 0;
 	if (!s)
 	{
 		ft_putchar_fd(c, 1);

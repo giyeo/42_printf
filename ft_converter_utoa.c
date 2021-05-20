@@ -21,7 +21,17 @@ char			*ft_utoa(unsigned int n)
 
 	number = (long)n;
 	counter = 0;
-	if (n < 0)
+	
+	len = len_int(number);
+	result = (char *)malloc(len * sizeof(char) + 1);
+
+	if (result == 0)
+		return (0);
+	return (int_to_str(number, len, result, counter));
+}
+
+/*
+if (n < 0)
 	{
 		number *= -1;
 		len = len_int(number);
@@ -32,11 +42,4 @@ char			*ft_utoa(unsigned int n)
 		counter = 1;
 	}
 	else
-	{
-		len = len_int(number);
-		result = (char *)malloc(len * sizeof(char) + 1);
-	}
-	if (result == 0)
-		return (0);
-	return (int_to_str(number, len, result, counter));
-}
+	{*/
