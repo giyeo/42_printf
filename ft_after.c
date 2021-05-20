@@ -98,13 +98,17 @@ void		type_int(int parameter, int d, unsigned int i, struct var *global)
 {
 	if (parameter == 'd' && global->precision_size > 0)
 	{
+		global->width_size += global->flag_zero;
 		if (len_int(d) < global->precision_size)
 			global->flag_zero = global->precision_size - len_int(d) + ft_strlen(ft_itoa(d));
+		global->width_size -= global->precision_size - len_int(i) - 1;
 	}
 	if (parameter == 'i' && global->precision_size > 0)
 	{
+		global->width_size += global->flag_zero;
 		if (len_int(i) < global->precision_size)
 			global->flag_zero = global->precision_size - len_int(i) + ft_strlen(ft_itoa(i));
+		global->width_size -= global->precision_size - len_int(i) - 1;
 	}
 	if (parameter == 'c')
 		ft_putsomething(true, d, 0, global);
