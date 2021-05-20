@@ -23,6 +23,7 @@
 
 struct var
 {
+	bool	abort;
 	bool	prec_print_minus;
 	bool	print_a_minus;
 	int		flag_minus;
@@ -31,6 +32,11 @@ struct var
 	int		precision_size;
 	int		final_size;
 };
+
+int				ft_is_precision(const char *pointer, va_list lista, struct var *global);
+int				ft_prec_error_hand(int parameter, int d, unsigned int i, struct var *global);
+int				ft_is_flag(const char *pointer, va_list lista, struct var *global);
+int				ft_is_width(const char *pointer, va_list lista, struct var *global);
 
 int				ft_printf(const char *format, ...);
 char			*ft_itoa(int n);

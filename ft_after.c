@@ -12,136 +12,12 @@
 
 #include "ft_printf.h"
 
-int ft_next_nbr(const char *pointer)
-{
-	return ft_atoi(pointer);
-}
-
-int ft_is_flag(const char *pointer, va_list lista, struct var *global)
-{
-	int n;
-
-	n = 0;
-	if (pointer[0] == '-')
-	{
-		n++;
-		if (pointer[1] == '*')
-		{
-			global->flag_minus = va_arg(lista, int);
-			if (global->flag_minus < 0)
-				global->flag_minus *= -1;
-			if (!global->flag_minus)
-				return 0;
-			n++;
-		}
-		if (ft_isdigit(pointer[1]))
-		{
-			global->flag_minus = ft_next_nbr(&pointer[1]);
-			n += len_int(ft_next_nbr(&pointer[1]));
-		}
-	}
-	if (pointer[0] == '0')
-	{
-		n++;
-		if (pointer[1] == '*')
-		{
-			global->flag_zero = va_arg(lista, int);
-			if (global->flag_zero < 0)
-			{
-				global->flag_minus = global->flag_zero * -1;
-				global->flag_zero = 0;
-				n++;
-				return n;
-			}
-			if (!global->flag_zero)
-				return 0;
-			n++;
-		}
-		if (ft_isdigit(pointer[1]))
-		{
-			global->flag_zero = ft_next_nbr(&pointer[1]);
-			n += len_int(ft_next_nbr(&pointer[1]));
-		}
-	}
-	return n;
-}
-
-int	ft_is_width(const char *pointer, va_list lista, struct var *global)
-{
-	int n;
-
-	n = 0;
-	if(ft_isdigit(pointer[0]))
-	{
-		global->width_size = ft_next_nbr(&pointer[0]);
-		n = len_int(ft_next_nbr(&pointer[0]));
-	}
-	if(pointer[0] == '*')
-	{
-		global->width_size = va_arg(lista, int);
-		if (global->width_size < 0)
-		{
-			global->flag_minus = global->width_size * -1;
-			global->width_size = 0;
-			n++;
-			return n;
-		}
-		if (!global->width_size)
-				return 0;
-		n++;
-	}
-	return n;
-}
-
-int	ft_is_precision(const char *pointer, va_list lista, struct var *global)
-{
-	int	n;
-
-	n = 0;
-	if(pointer[0] == '.')
-	{
-		n++;
-		if (ft_isdigit(pointer[1]))
-		{
-			global->precision_size = ft_next_nbr(&pointer[1]);
-			n += len_int(ft_next_nbr(&pointer[1]));
-		}
-		if (pointer[1] == '*')
-		{
-			global->precision_size = va_arg(lista, int);
-			if (!global->precision_size)
-				return 0;
-			n++;
-		}
-	}
-	return n;
-}
-
-
 void		type_int(int parameter, int d, unsigned int i, struct var *global)
 {
-	if (parameter == 'd' && global->precision_size > 0)
-	{
-		global->width_size += global->flag_zero;
-		if (len_int(d) < global->precision_size)
-			global->flag_zero = global->precision_size - len_int(d) + ft_strlen(ft_itoa(d));
-		global->width_size -= global->precision_size - len_int(i) - 1;
-	}
-	if (parameter == 'i' && global->precision_size > 0)
-	{
-		global->width_size += global->flag_zero;
-		if (len_int(i) < global->precision_size)
-			global->flag_zero = global->precision_size - len_int(i) + ft_strlen(ft_itoa(i));
-		global->width_size -= global->precision_size - len_int(i) - 1;
-	}
-	if ((d < 0 || i < 0) && global->precision_size > 0)
-		global->prec_print_minus = true;
-	if ((d < 0 || i < 0) && global->flag_zero > 0)
-	{
-		i *= -1;
-		d *= -1;
-		global->print_a_minus = true;
-	}
+	if (d)
+		d = ft_prec_error_hand(parameter, d, i, global);
+	else
+		i = ft_prec_error_hand(parameter, d, i, global);
 	if (parameter == 'c')
 		ft_putsomething(true, d, 0, global);
 	if (parameter == 'd')
@@ -190,6 +66,8 @@ void	ft_after(const char *pointer, va_list lista, struct var *global)
     i += ft_is_flag(&pointer[i], lista, global);
 	i += ft_is_width(&pointer[i], lista, global);
 	i += ft_is_precision(&pointer[i], lista, global);
+	if (global->abort)
+		return ;
 	if (pointer[i] == '%')
 		ft_putsomething(false, '%', 0, global);
 	if (pointer[i] == 's' || pointer[i] == 'p')

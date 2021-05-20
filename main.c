@@ -40,5 +40,13 @@ int		main(void)
 	printf("%*ia\n", -14, 94827);
 	ft_printf("%0*ia\n", -7, -54);
 	printf("%0*ia\n", -7, -54);
+
+	ft_printf("%.6d\n", -3);
+	printf("%.6d\n", -3);
+
+	ft_printf("%.s\n", "hello");
+	printf("%.s\n", "hello");
+	ft_printf("%.0s\n", "hello");
+	printf("%.0s\n", "hello");
 	return (0);
 }
