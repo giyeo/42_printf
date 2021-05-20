@@ -23,6 +23,8 @@
 
 struct var
 {
+	bool	prec_print_minus;
+	bool	print_a_minus;
 	int		flag_minus;
 	int		flag_zero;
 	int		width_size;

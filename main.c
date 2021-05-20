@@ -18,7 +18,16 @@ int		main(void)
 	i = printf("%%04.3i 42 == |%04.3i|\n", 42);
 
 	i = ft_printf("|%04.2i|\n", 42);
-	i = printf("|%04.2i|\n", 42);
+	i = printf("|%04.2i|\n", 42);  
 
+	i = ft_printf("%.*s", 0, "hello2");
+	i = printf("%.*s", 0, "hello1");
+
+	i = ft_printf("%.*i\n", 6, -3);
+	printf("%.*i\n", 6, -3);
+	i = ft_printf("%0*i\n", 7, -54);
+	printf("%0*i\n", 7, -54);
+
+	printf("%i\n", -54);
 	return (0);
 }
