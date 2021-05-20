@@ -42,9 +42,9 @@ void	ft_putsomething(bool type, char c, char *s, struct var *global)
 	{
 		if (type)
 		{
-			global->flag_minus -= ft_strlen(s) - global->flag_minus;
-			global->flag_zero -= ft_strlen(s) - global->flag_zero;
-			global->width_size -= ft_strlen(s) - global->width_size;
+			global->flag_minus = global->flag_minus - ft_strlen(s);
+			global->flag_zero = global->flag_zero - ft_strlen(s);
+			global->width_size = global->width_size - ft_strlen(s);
 		}
 		while (global->width_size > 0 && type)
 		{

@@ -14,18 +14,7 @@
 
 int ft_next_nbr(const char *pointer)
 {
-    int i;
-    int result;
-
-    i = 0;
-    result = 0;
-    while (ft_isdigit(pointer[i]) == 1)
-    {
-		result *= 10; 
-        result += ft_atoi(&pointer[i]);
-        i++;
-    }
-    return result;
+    return ft_atoi(pointer);
 }
 
 int ft_is_flag(const char *pointer, va_list lista, struct var *global)

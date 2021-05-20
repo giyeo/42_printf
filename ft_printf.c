@@ -53,7 +53,7 @@ int		ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			ft_after((&format[i + 1]), lista, &global);
-			i += ft_len_after(&format[i]) + 2;
+			i += ft_len_after(&format[i] + 1) + 1;
 			reset_global(&global);
 		}
 		else
