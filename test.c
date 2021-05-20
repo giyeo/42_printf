@@ -26,7 +26,7 @@ int ft_next_nbr(const char *pointer)
 int main(void)
 {
 	const char *format = "2s";
-	printf("%d", ft_next_nbr(format));
-	printf("%d", 's');
+	printf("%.*s", 10, "bom dia");
+	printf("%.*d", 7, 51234);
 	return (0);
 }
