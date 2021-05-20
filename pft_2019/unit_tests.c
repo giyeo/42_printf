@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 21:15:57 by gfielder          #+#    #+#             */
-/*   Updated: 2021/05/20 16:00:59 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/20 16:55:48 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -972,6 +972,6 @@ int new2019_negstar_5(void){return test("%-*.*s", -7, -3, "yolo");}
 int new2019_negstar_6(void){return test("%*i", -4, 94827);}
 int new2019_negstar_7(void){return test("%*i", -14, 94827);}
 int new2019_negstar_8(void){return test("%.*i", -6, -3);}
-int new2019_negstar_9(void){return test("%0*i", -7, -54);}
+int new2019_negstar_9(void){return test("%0*i", -7, -54);}      
 
 #pragma clang diagnostic pop

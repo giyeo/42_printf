@@ -25,9 +25,20 @@ int		main(void)
 
 	i = ft_printf("%.*i\n", 6, -3);
 	printf("%.*i\n", 6, -3);
+
 	i = ft_printf("%0*i\n", 7, -54);
 	printf("%0*i\n", 7, -54);
 
-	printf("%i\n", -54);
+	ft_printf("%*sa\n", -32, "abc");
+	printf("%*sa\n", -32, "abc");
+	ft_printf("%-*sa\n", -32, "abc");
+	printf("%-*sa\n", -32, "abc");
+
+	ft_printf("%-*.*sa\n", -7, -3, "yolo");
+	printf("%-*.*sa\n", -7, -3, "yolo");
+	ft_printf("%*ia\n", -14, 94827);
+	printf("%*ia\n", -14, 94827);
+	ft_printf("%0*ia\n", -7, -54);
+	printf("%0*ia\n", -7, -54);
 	return (0);
 }
