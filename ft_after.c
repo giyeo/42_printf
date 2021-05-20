@@ -81,8 +81,8 @@ int	ft_is_precision(const char *pointer, va_list lista, struct var *global)
 		n++;
 		if (ft_isdigit(pointer[1]))
 		{
-			global->precision_size = ft_next_nbr(&pointer[0]);
-			n += len_int(ft_next_nbr(&pointer[0]));
+			global->precision_size = ft_next_nbr(&pointer[1]);
+			n += len_int(ft_next_nbr(&pointer[1]));
 		}
 		if (pointer[1] == '*')
 		{
@@ -100,6 +100,11 @@ void		type_int(int parameter, int d, unsigned int i, struct var *global)
 	{
 		if (len_int(d) < global->precision_size)
 			global->flag_zero = global->precision_size - len_int(d) + ft_strlen(ft_itoa(d));
+	}
+	if (parameter == 'i' && global->precision_size > 0)
+	{
+		if (len_int(i) < global->precision_size)
+			global->flag_zero = global->precision_size - len_int(i) + ft_strlen(ft_itoa(i));
 	}
 	if (parameter == 'c')
 		ft_putsomething(true, d, 0, global);
