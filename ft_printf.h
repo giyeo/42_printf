@@ -40,6 +40,7 @@ int				ft_prec_error_hand(int parameter, int d, unsigned int i, struct var *glob
 int				ft_is_flag(const char *pointer, va_list lista, struct var *global);
 int				ft_is_width(const char *pointer, va_list lista, struct var *global);
 
+int				how_many_zeros(const char *pointer);
 int				ft_printf(const char *format, ...);
 char			*ft_itoa(int n);
 char			*ft_htoa_upper(unsigned int n);
