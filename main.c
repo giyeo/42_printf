@@ -2,6 +2,7 @@
 int		main(void)
 {
 	int i;
+	/*
 	i = ft_printf("oi%05d", 4); printf(" %d\n", i);
 	i = printf("oi%05d", 4); printf(" %d\n", i);
 	i = ft_printf("%.*d", 7, 51234); printf(" %d\n", i);
@@ -85,5 +86,8 @@ int		main(void)
 	i = printf("%1.s", "\0");printf(" %d\n", i);
 	i = printf("%2.s", "\0");printf(" %d\n", i);
 	i = printf("%9.s", "\0");printf(" %d\n", i);
+	*/
+	i = ft_printf("%.03s", NULL); printf(" %d\n", i);
+	i = ft_printf("%.09s", NULL); printf(" %d\n", i);
 	return (0);
 }
