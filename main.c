@@ -69,5 +69,21 @@ int		main(void)
 	i = printf("%.09s", s_hidden); printf(" %d\n", i);
 	i = printf("%.03s", NULL); printf(" %d\n", i);
 	i = printf("%.09s", NULL); printf(" %d\n", i);
+
+	i = ft_printf("%3.s", s_hidden); printf(" %d\n", i);
+	i = ft_printf("%10.s", s_hidden);printf(" %d\n", i);
+	i = ft_printf("%3.s", NULL);printf(" %d\n", i);
+	i = ft_printf("%10.s", NULL);printf(" %d\n", i);
+	i = ft_printf("%1.s", "\0");printf(" %d\n", i);
+	i = ft_printf("%2.s", "\0");printf(" %d\n", i);
+	i = ft_printf("%9.s", "\0");printf(" %d\n", i);
+	printf("----------------\n");
+	i = printf("%3.s", s_hidden); printf(" %d\n", i);
+	i = printf("%10.s", s_hidden);printf(" %d\n", i);
+	i = printf("%3.s", NULL);printf(" %d\n", i);
+	i = printf("%10.s", NULL);printf(" %d\n", i);
+	i = printf("%1.s", "\0");printf(" %d\n", i);
+	i = printf("%2.s", "\0");printf(" %d\n", i);
+	i = printf("%9.s", "\0");printf(" %d\n", i);
 	return (0);
 }

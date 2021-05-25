@@ -14,6 +14,7 @@
 
 void	init_global(struct var *global)
 {
+	global->error = false;
 	global->abort = false;
 	global->prec_print_minus = false;
 	global->print_a_minus = false;
@@ -26,6 +27,7 @@ void	init_global(struct var *global)
 
 void	reset_global(struct var *global)
 {
+	global->error = false;
 	global->abort = false;
 	global->prec_print_minus = false;
 	global->print_a_minus = false;
@@ -60,6 +62,8 @@ int		ft_printf(const char *format, ...)
 		{
 			ft_after((&format[i + 1]), lista, &global);
 			i += ft_len_after(&format[i] + 1) + 1;
+			if (global.error)
+				return 0;
 			reset_global(&global);
 		}
 		else

@@ -43,6 +43,7 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 		{
 			if (global->precision_size >= 6)
 				ft_putsomething(true, 0, "(null)", global);
+			global->error = true;
 			return ;
 		}
 		if (global->precision_size < (int)ft_strlen((char *)pointer))
@@ -73,7 +74,10 @@ void	ft_after(const char *pointer, va_list lista, struct var *global)
 	i += ft_is_width(&pointer[i], lista, global);
 	i += ft_is_precision(&pointer[i], lista, global);
 	if (global->abort)
+	{
+		ft_putsomething(true, 0, "", global);
 		return ;
+	}
 	if (pointer[i] == '%')
 		ft_putsomething(false, '%', 0, global);
 	if (pointer[i] == 's' || pointer[i] == 'p')
