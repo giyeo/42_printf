@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:21 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/25 20:06:20 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/25 20:08:47 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ int ft_is_flag(const char *pointer, va_list lista, struct var *global)
 			n += how_many_zeros(&pointer[1]);
 		}
 		else
+		{
+			global->error = true;
 			return 0;
+		}
 	}
 	if (pointer[0] == '0')
 	{

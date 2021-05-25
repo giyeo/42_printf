@@ -115,5 +115,8 @@ int		main(void)
 	i = printf("%-5%");printf(" %d\n", i);
 	i = printf("%05%");printf(" %d\n", i);
 	i = printf("%-05%");printf(" %d\n", i);
+
+	i = ft_printf("%-f", 42.5);printf(" %d\n", i);
+	i = printf("%-f", 42.5);printf(" %d\n", i);
 	return (0);
 }
