@@ -83,7 +83,7 @@ void	ft_after(const char *pointer, va_list lista, struct var *global)
 		return ;
 	}
 	if (pointer[i] == '%')
-		ft_putsomething(false, '%', 0, global);
+		ft_putsomething(true, 0, "%", global);
 	if (pointer[i] == 's' || pointer[i] == 'p')
 	{
 		global->zero_string = true;

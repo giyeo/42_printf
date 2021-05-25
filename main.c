@@ -105,5 +105,15 @@ int		main(void)
 	
 	i = ft_printf("%-00s", s_hidden);printf(" %d\n", i);
 	i = printf("%-00s", s_hidden);printf(" %d\n", i);
+
+	i = ft_printf("%5%");printf(" %d\n", i);
+	i = ft_printf("%-5%");printf(" %d\n", i);
+	i = ft_printf("%05%");printf(" %d\n", i);
+	i = ft_printf("%-05%");printf(" %d\n", i);
+
+	i = printf("%5%");printf(" %d\n", i);
+	i = printf("%-5%");printf(" %d\n", i);
+	i = printf("%05%");printf(" %d\n", i);
+	i = printf("%-05%");printf(" %d\n", i);
 	return (0);
 }
