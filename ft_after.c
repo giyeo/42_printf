@@ -39,13 +39,19 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 	precision = 0;
 	if (parameter == 's' && global->precision_size > 0)
 	{
+		if (pointer == NULL)
+		{
+			if (global->precision_size >= 6)
+				ft_putsomething(true, 0, "(null)", global);
+			return ;
+		}
 		if (global->precision_size < (int)ft_strlen((char *)pointer))
 			precision = ft_substr((char *)pointer, 0, global->precision_size);
 	}
 	if (parameter == 's')
 	{ 
 		if (pointer == NULL)
-			ft_putsomething(false, 0, "(null)", global);
+			ft_putsomething(true, 0, "(null)", global);
 		else if (precision != 0)
 			ft_putsomething(true, 0, precision, global);
 		else

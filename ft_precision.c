@@ -6,29 +6,51 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:06 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/22 11:06:41 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/25 17:34:25 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+int how_many_zeros(const char *pointer)
+{
+	int i;
+	int n;
+
+	i = 0;
+	n = 0;
+	while (pointer[i] == '0')
+	{
+		i++;
+		n++;
+	}
+	return n;
+}
+
 int	ft_is_precision(const char *pointer, va_list lista, struct var *global)
 {
 	int	n;
+	int check;
+
 
 	n = 0;
 	if(pointer[0] == '.')
 	{
 		n++;
+		check = ft_atoi(&pointer[1]);
 		if (is_type(pointer[1]) || pointer[1] == '0')
 		{
-			global->abort = true;
-			return 0;
+			if (!check)
+			{
+				global->abort = true;
+				return 0;
+			}
 		}
-		if (ft_isdigit(pointer[1]))
+		if (check)
 		{
-			global->precision_size = ft_atoi(&pointer[1]);
-			n += len_int(ft_atoi(&pointer[1]));
+			global->precision_size = check;
+			n += len_int(check);
+			n += how_many_zeros(&pointer[1]);
 		}
 		if (pointer[1] == '*')
 		{
