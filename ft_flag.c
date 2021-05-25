@@ -6,11 +6,21 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:21 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/20 17:33:25 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/25 19:14:28 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int until_type(const char *pointer)
+{
+	int i;
+
+	i = 0;
+	while(is_type(pointer[i]) == 0)
+		i++;
+	return i;
+}
 
 int ft_is_flag(const char *pointer, va_list lista, struct var *global)
 {
@@ -51,6 +61,11 @@ int ft_is_flag(const char *pointer, va_list lista, struct var *global)
 			if (!global->flag_zero)
 				return 0;
 			n++;
+		}
+		if (ft_atoi(&pointer[1]) == 0 && pointer[1] != '*')
+		{
+			n += until_type(&pointer[1]);
+			return n;
 		}
 		if (ft_isdigit(pointer[1]))
 		{

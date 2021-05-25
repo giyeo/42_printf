@@ -89,5 +89,16 @@ int		main(void)
 	*/
 	i = ft_printf("%.03s", NULL); printf(" %d\n", i);
 	i = ft_printf("%.09s", NULL); printf(" %d\n", i);
+	static char *s_hidden = "hi low\0don't print me lol\0";
+
+	i = ft_printf("%09s", s_hidden);printf(" %d\n", i);
+	i = ft_printf("%00-s", s_hidden);printf(" %d\n", i);
+	i = ft_printf("%0-0s", s_hidden);printf(" %d\n", i);
+	i = ft_printf("%0000s", s_hidden);printf(" %d\n", i);
+
+	i = printf("%09s", s_hidden);printf(" %d\n", i);
+	i = printf("%00-s", s_hidden);printf(" %d\n", i);
+	i = printf("%0-0s", s_hidden);printf(" %d\n", i);
+	i = printf("%0000s", s_hidden);printf(" %d\n", i);
 	return (0);
 }

@@ -58,7 +58,10 @@ void	ft_putsomething(bool type, char c, char *s, struct var *global)
 		}
 		while (global->flag_zero > 0 && type)
 		{
-			ft_putchar_fd('0', 1);
+			if (global->zero_string)
+				ft_putchar_fd(' ', 1);
+			else
+				ft_putchar_fd('0', 1);
 			global->flag_zero--;
 			global->final_size++;
 		}

@@ -23,6 +23,7 @@
 
 struct var
 {
+	bool	zero_string;
 	bool	error;
 	bool	abort;
 	bool	prec_print_minus;

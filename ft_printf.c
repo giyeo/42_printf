@@ -14,6 +14,7 @@
 
 void	init_global(struct var *global)
 {
+	global->zero_string = false;
 	global->error = false;
 	global->abort = false;
 	global->prec_print_minus = false;
@@ -27,6 +28,7 @@ void	init_global(struct var *global)
 
 void	reset_global(struct var *global)
 {
+	global->zero_string = false;
 	global->error = false;
 	global->abort = false;
 	global->prec_print_minus = false;

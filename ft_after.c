@@ -85,7 +85,10 @@ void	ft_after(const char *pointer, va_list lista, struct var *global)
 	if (pointer[i] == '%')
 		ft_putsomething(false, '%', 0, global);
 	if (pointer[i] == 's' || pointer[i] == 'p')
+	{
+		global->zero_string = true;
 		type_chr(pointer[i], va_arg(lista, void*), global);
+	}
 	if (pointer[i] == 'd' || pointer[i] == 'i' || pointer[i] == 'c')
 		type_int(pointer[i], va_arg(lista, int), 0, global);
 	if (pointer[i] == 'u' || pointer[i] == 'x' || pointer[i] == 'X')
