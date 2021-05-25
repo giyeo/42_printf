@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   unit_tests.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gfielder <gfielder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 21:15:57 by gfielder          #+#    #+#             */
-/*   Updated: 2019/11/19 18:06:44 by cclaude          ###   ########.fr       */
+/*   Updated: 2021/05/20 16:55:48 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -972,7 +972,7 @@ int new2019_negstar_5(void){return ft_printf("%-*.*s", -7, -3, "yolo");}
 int new2019_negstar_6(void){return ft_printf("%*i", -4, 94827);}
 int new2019_negstar_7(void){return ft_printf("%*i", -14, 94827);}
 int new2019_negstar_8(void){return ft_printf("%.*i", -6, -3);}
-int new2019_negstar_9(void){return ft_printf("%0*i", -7, -54);}
+int new2019_negstar_9(void){return ft_printf("%0*i", -7, -54);}      
 
 #pragma clang diagnostic pop
 /* ************************************************************************** */
@@ -980,10 +980,10 @@ int new2019_negstar_9(void){return ft_printf("%0*i", -7, -54);}
 /*                                                        :::      ::::::::   */
 /*   unit_tests.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gfielder <gfielder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 21:15:57 by gfielder          #+#    #+#             */
-/*   Updated: 2019/11/19 18:06:44 by cclaude          ###   ########.fr       */
+/*   Updated: 2021/05/20 16:55:48 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1891,7 +1891,7 @@ int new2019_negstar_5_bench(void){return printf("%-*.*s", -7, -3, "yolo");}
 int new2019_negstar_6_bench(void){return printf("%*i", -4, 94827);}
 int new2019_negstar_7_bench(void){return printf("%*i", -14, 94827);}
 int new2019_negstar_8_bench(void){return printf("%.*i", -6, -3);}
-int new2019_negstar_9_bench(void){return printf("%0*i", -7, -54);}
+int new2019_negstar_9_bench(void){return printf("%0*i", -7, -54);}      
 
 #pragma clang diagnostic pop
 const t_test_entry g_unit_tests[] = {
@@ -2639,7 +2639,7 @@ const t_test_entry g_unit_tests[] = {
 	{1, 741, "new2019_negstar_6", new2019_negstar_6, new2019_negstar_6_bench, "{return test(\"%*i\", -4, 94827);}"},
 	{1, 742, "new2019_negstar_7", new2019_negstar_7, new2019_negstar_7_bench, "{return test(\"%*i\", -14, 94827);}"},
 	{1, 743, "new2019_negstar_8", new2019_negstar_8, new2019_negstar_8_bench, "{return test(\"%.*i\", -6, -3);}"},
-	{1, 744, "new2019_negstar_9", new2019_negstar_9, new2019_negstar_9_bench, "{return test(\"%0*i\", -7, -54);}"},
+	{1, 744, "new2019_negstar_9", new2019_negstar_9, new2019_negstar_9_bench, "{return test(\"%0*i\", -7, -54);}      "},
 	{0, 2147483647, NULL, NULL, NULL, NULL}
 };
 
