@@ -103,5 +103,7 @@ int		main(void)
 	i = printf("%0-0s", s_hidden);printf(" %d\n", i);
 	i = printf("%0000s", s_hidden);printf(" %d\n", i);
 	
+	i = ft_printf("%-00s", s_hidden);printf(" %d\n", i);
+	i = printf("%-00s", s_hidden);printf(" %d\n", i);
 	return (0);
 }
