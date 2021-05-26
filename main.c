@@ -138,8 +138,20 @@ int		main(void)
 	i =	printf("%.5p", NULL);printf(" %d\n", i);
 	i = ft_printf("%.2p", NULL);printf(" %d\n", i);
 	i =	printf("%.2p", NULL);printf(" %d\n", i);
-	*/
+	
 	i = ft_printf("%.6d", -3); printf(" %d\n", i);
 	i = printf("%.6d", -3); printf(" %d\n", i);
+	i = ft_printf("%.4d", -2372); printf(" %d\n", i);
+	i = printf("%.4d", -2372); printf(" %d\n", i);
+*/
+	i = ft_printf("%.3d\n", 18); 
+	i = ft_printf("%.3d\n", -18);
+	i = ft_printf("%.5d\n", 12345);
+	i = ft_printf("%.5d\n", -12345);
+
+	i = printf("%.3d\n", 18); 
+	i = printf("%.3d\n", -18);
+	i = printf("%.5d\n", 12345);
+	i = printf("%.5d\n", -12345);
 	return (0);
 }

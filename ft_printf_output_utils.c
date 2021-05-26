@@ -38,10 +38,7 @@ void	ft_putsomething(bool type, char c, char *s, struct var *global)
 	else
 	{
 		if (global->print_a_minus)
-		{
 			ft_putsomething(false, '-', 0, global);
-			global->flag_zero--;
-		}
 		if (global->prec_print_minus)
 			global->flag_zero++;
 		if (type)

@@ -25,8 +25,14 @@ int ft_next_nbr(const char *pointer)
 
 int main(void)
 {
-	const char *format = "2s";
-	printf("%.*s", 10, "bom dia");
-	printf("%.*d", 7, 51234);
+	printf("%.3d\n", 18); 
+	printf("%.3d\n", -18);
+	printf("%.5d\n", 12345);
+	printf("%.5d\n", -12345);
+	printf("%5.3d\n", 18); 
+	printf("%5.3d\n", -18);
+	printf("%5.5d\n", 12345);
+	printf("%5.5d\n", -12345);
+
 	return (0);
 }
