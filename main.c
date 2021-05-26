@@ -86,7 +86,7 @@ int		main(void)
 	i = printf("%1.s", "\0");printf(" %d\n", i);
 	i = printf("%2.s", "\0");printf(" %d\n", i);
 	i = printf("%9.s", "\0");printf(" %d\n", i);
-	*/
+
 	i = ft_printf("%.03s", NULL); printf(" %d\n", i);
 	i = ft_printf("%.09s", NULL); printf(" %d\n", i);
 	static char *s_hidden = "hi low\0don't print me lol\0";
@@ -126,5 +126,17 @@ int		main(void)
 	i = printf("%%-i 42 == %-i", 42);printf(" %d\n", i);
 	i = printf("%%-d 42 == %-d", INT_MIN);printf(" %d\n", i);
 	i = printf("%%-i -42 == %-i", -42);printf(" %d\n", i);
+	*/
+
+	i = ft_printf("%5p", NULL);printf(" %d\n", i);
+	i = ft_printf("%2p", NULL);printf(" %d\n", i);
+	i = printf("%5p", NULL);printf(" %d\n", i);
+	i = printf("%2p", NULL);printf(" %d\n", i);
+	i = ft_printf("%.p", NULL);printf(" %d\n", i);
+	i =	printf("%.p", NULL);printf(" %d\n", i);
+	i = ft_printf("%.5p", NULL);printf(" %d\n", i);
+	i =	printf("%.5p", NULL);printf(" %d\n", i);
+	i = ft_printf("%.2p", NULL);printf(" %d\n", i);
+	i =	printf("%.2p", NULL);printf(" %d\n", i);
 	return (0);
 }
