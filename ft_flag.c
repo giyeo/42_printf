@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:21 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/26 18:19:35 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/26 19:11:00 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,19 @@ int until_type(const char *pointer)
 int ft_is_flag(const char *pointer, va_list lista, struct var *global)
 {
 	int n;
+	int check;
 
+	check = 1;
 	n = 0;
-	if (pointer[0] == '-')
+	if (pointer[0] == '-' || pointer[0] == '0' && pointer[1] == '-')
 	{
+		if (pointer[0] == '0')
+		{
+			check++;
+			n++;
+		}
 		n++;
-		if (pointer[1] == '*')
+		if (pointer[check] == '*')
 		{
 			global->flag_minus = va_arg(lista, int);
 			if (global->flag_minus < 0)
@@ -39,23 +46,23 @@ int ft_is_flag(const char *pointer, va_list lista, struct var *global)
 				return 0;
 			n++;
 		}
-		else if (ft_isdigit(pointer[1]))
+		else if (ft_isdigit(pointer[check]))
 		{
-			global->flag_minus = ft_atoi(&pointer[1]);
-			if (ft_atoi(&pointer[1]) != 0)
-				n += len_int(ft_atoi(&pointer[1]));
-			n += how_many_zeros(&pointer[1]);
+			global->flag_minus = ft_atoi(&pointer[check]);
+			if (ft_atoi(&pointer[check]) != 0)
+				n += len_int(ft_atoi(&pointer[check]));
+			n += how_many_zeros(&pointer[check]);
 		}
 		else
 		{
-			if (!is_type(pointer[1]))
+			if (!is_type(pointer[check]))
 			{
 				global->error = true;
 				return 0;
 			}
 		}
 	}
-	if (pointer[0] == '0')
+	if (pointer[0] == '0' && pointer[1] != '-')
 	{
 		global->zero_before = true;
 		n++;

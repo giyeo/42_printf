@@ -205,5 +205,8 @@ int		main(void)
 	i = printf("%08.3d", -8473); printf(" %d\n", i);
 	i = printf("%03.7d", 3267); printf(" %d\n", i);
 	i = printf("%03.7d", -2375); printf(" %d\n", i);
+
+	i = ft_printf("%0-8.5d", 34); printf(" %d\n", i);
+	i = printf("%0-8.5d", 34); printf(" %d\n", i);
 	return (0);
 }
