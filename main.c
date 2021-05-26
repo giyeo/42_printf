@@ -165,5 +165,12 @@ int		main(void)
 
 	i = ft_printf("%07d", -54); printf(" %d\n", i);
 	i = printf("%07d", -54); printf(" %d\n", i);
+
+	i = ft_printf("%8.5d", 34); printf(" %d\n", i);
+	i = ft_printf("%10.5d", -216); printf(" %d\n", i);
+	i = ft_printf("%8.5d", 0); printf(" %d\n", i);
+	i = printf("%8.5d", 34); printf(" %d\n", i);
+	i = printf("%10.5d", -216); printf(" %d\n", i);
+	i = printf("%8.5d", 0); printf(" %d\n", i);
 	return (0);
 }
