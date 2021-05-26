@@ -160,5 +160,7 @@ int		main(void)
 	i = ft_printf("%-7d", -14); printf(" %d\n", i);
 	i = printf("%-7d", -14); printf(" %d\n", i);
 
+	i = ft_printf("%-5d", -2562); printf(" %d\n", i);
+	i = printf("%-5d", -2562); printf(" %d\n", i);
 	return (0);
 }
