@@ -212,5 +212,8 @@ int		main(void)
 	
 	i = ft_printf("%5.0d", 0); printf(" %d\n", i);
 	i = printf("%5.0d", 0); printf(" %d\n", i);
+
+	i = ft_printf("|%-5.3s|\n", "LYDI"); printf(" %d\n", i);
+	i = printf("|%-5.3s|\n", "LYDI"); printf(" %d\n", i);
 	return (0);
 }
