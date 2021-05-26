@@ -25,14 +25,7 @@ int ft_next_nbr(const char *pointer)
 
 int main(void)
 {
-	printf("%.3d\n", 18); 
-	printf("%.3d\n", -18);
-	printf("%.5d\n", 12345);
-	printf("%.5d\n", -12345);
-	printf("%5.3d\n", 18); 
-	printf("%5.3d\n", -18);
-	printf("%5.5d\n", 12345);
-	printf("%5.5d\n", -12345);
+	printf("%5.0d\n", 18); 
 
 	return (0);
 }

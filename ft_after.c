@@ -14,6 +14,11 @@
 
 void		type_int(int parameter, int d, unsigned int i, struct var *global)
 {
+	if ((d == 0 && i == 0) && global->noPrecVal)
+	{
+		ft_putsomething(true, 0, "", global);
+		return;
+	}
 	if (d)
 		d = ft_prec_error_hand(parameter, d, i, global);
 	else
