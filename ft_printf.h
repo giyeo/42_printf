@@ -23,6 +23,7 @@
 
 struct var
 {
+	bool	zero_before;
 	bool	zero_string;
 	bool	error;
 	bool	abort;
