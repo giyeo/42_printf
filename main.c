@@ -127,7 +127,6 @@ int		main(void)
 	i = printf("%%-d 42 == %-d", INT_MIN);printf(" %d\n", i);
 	i = printf("%%-i -42 == %-i", -42);printf(" %d\n", i);
 	
-*/
 	i = ft_printf("%5p", NULL);printf(" %d\n", i);
 	i = ft_printf("%2p", NULL);printf(" %d\n", i);
 	i = printf("%5p", NULL);printf(" %d\n", i);
@@ -139,5 +138,8 @@ int		main(void)
 	i =	printf("%.5p", NULL);printf(" %d\n", i);
 	i = ft_printf("%.2p", NULL);printf(" %d\n", i);
 	i =	printf("%.2p", NULL);printf(" %d\n", i);
+	*/
+	i = ft_printf("%.6d", -3); printf(" %d\n", i);
+	i = printf("%.6d", -3); printf(" %d\n", i);
 	return (0);
 }
