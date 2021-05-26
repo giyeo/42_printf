@@ -52,8 +52,6 @@ void	ft_putsomething(bool type, char c, char *s, struct var *global)
 			{
 				global->width_size -= global->flag_zero;
 				global->flag_minus -= global->flag_zero;
-				if (global->zero_before)
-					global->flag_zero -= global->precision_size;
 			}
 		}
 		while (global->width_size > 0 && type)

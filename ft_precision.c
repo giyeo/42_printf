@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:06 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/26 17:58:43 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/26 18:45:45 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,9 @@ int	ft_is_precision(const char *pointer, va_list lista, struct var *global)
 int	ft_prec_error_hand(int parameter, int d, unsigned int i, struct var *global)
 {
 	int n;
+	int original_zero;
 
+	original_zero = global->flag_zero;
 	if (parameter == 'd')
 	{
 		if (d < 0)
@@ -81,6 +83,15 @@ int	ft_prec_error_hand(int parameter, int d, unsigned int i, struct var *global)
 			global->flag_zero += (global->precision_size - n) + n;
 		else
 			global->precision_size = 0;
+		if (global->zero_before)
+		{
+			global->flag_zero -= global->precision_size + (original_zero - global->precision_size);
+			global->width_size += n + (original_zero - global->precision_size);
+			global->precision_size = 0;
+			if (global->print_a_minus)
+				global->flag_zero++;
+		}
+	
 	}
 	if (parameter == 'i')
 	{
