@@ -144,6 +144,7 @@ int		main(void)
 	i = ft_printf("%.4d", -2372); printf(" %d\n", i);
 	i = printf("%.4d", -2372); printf(" %d\n", i);
 */
+	/*
 	i = ft_printf("%.3d\n", 18); 
 	i = ft_printf("%.3d\n", -18);
 	i = ft_printf("%.5d\n", 12345);
@@ -185,5 +186,21 @@ int		main(void)
 	i = printf("%-8.5d", 34);printf(" %d\n", i);
 	i = printf("%-10.5d", -216);printf(" %d\n", i);
 	i = printf("%-8.5d", 0);printf(" %d\n", i);
+	*/
+	i = ft_printf("%08.5d", 34); printf(" %d\n", i);
+	i = ft_printf("%010.5d", -216); printf(" %d\n", i);
+	i = ft_printf("%08.5d", 0); printf(" %d\n", i);
+	i = ft_printf("%08.3d", 8375); printf(" %d\n\n", i);
+	i = printf("%08.5d", 34); printf(" %d\n", i);
+	i = printf("%010.5d", -216); printf(" %d\n", i);
+	i = printf("%08.5d", 0); printf(" %d\n", i);
+	i = printf("%08.3d", 8375); printf(" %d\n", i);
+	printf("\n");
+	i = ft_printf("%08.3d", -8473); printf(" %d\n", i);
+	i = ft_printf("%03.7d", 3267); printf(" %d\n", i);
+	i = ft_printf("%03.7d", -2375); printf(" %d\n\n", i);
+	i = printf("%08.3d", -8473); printf(" %d\n", i);
+	i = printf("%03.7d", 3267); printf(" %d\n", i);
+	i = printf("%03.7d", -2375); printf(" %d\n", i);
 	return (0);
 }
