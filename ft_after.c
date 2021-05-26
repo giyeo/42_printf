@@ -65,7 +65,11 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 	if (parameter == 'p')
 	{
 		if (global->width_size > 0)
+		{
 			global->width_size--;
+			ft_putsomething(true, 0, "0x", global);
+			return ;
+		}
 		ft_putsomething(true, 0, "0x", global);
 		ft_putsomething(false, 0, tohex((unsigned long *)pointer), global);
 	}
