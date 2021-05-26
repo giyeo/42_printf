@@ -187,6 +187,9 @@ int		main(void)
 	i = printf("%-10.5d", -216);printf(" %d\n", i);
 	i = printf("%-8.5d", 0);printf(" %d\n", i);
 	*/
+	i = ft_printf("%07d", -54); printf(" %d\n", i);
+	i = printf("%07d", -54); printf(" %d\n", i);
+
 	i = ft_printf("%08.5d", 34); printf(" %d\n", i);
 	i = ft_printf("%010.5d", -216); printf(" %d\n", i);
 	i = ft_printf("%08.5d", 0); printf(" %d\n", i);
