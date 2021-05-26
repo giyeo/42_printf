@@ -35,8 +35,10 @@ void		type_int(int parameter, int d, unsigned int i, struct var *global)
 void		type_chr(int parameter, void *pointer, struct var *global)
 {
 	char *precision;
-	char *i;
 
+	int i;
+
+	i = global->precision_size;
 	precision = 0;
 	if (parameter == 's' && global->precision_size > 0)
 	{
@@ -68,9 +70,8 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 		if (global->width_size > 0)
 			global->width_size--;
 		ft_putsomething(true, 0, "0x", global);
-		i = tohex((unsigned long *)pointer);
-		if (i && global->width_size > 0)
-			ft_putsomething(false, 0, i, global);
+		if (!(i > 0))
+		ft_putsomething(false, 0, tohex((unsigned long *)pointer), global);
 	}
 }
 
