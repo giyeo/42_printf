@@ -153,5 +153,8 @@ int		main(void)
 	i = printf("%.3d\n", -18);
 	i = printf("%.5d\n", 12345);
 	i = printf("%.5d\n", -12345);
+
+	i = ft_printf("%7d", -14); printf(" %d\n", i);
+	i = printf("%7d", -14); printf(" %d\n", i);
 	return (0);
 }

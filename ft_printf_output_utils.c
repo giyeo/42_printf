@@ -37,15 +37,13 @@ void	ft_putsomething(bool type, char c, char *s, struct var *global)
 	}
 	else
 	{
-		if (global->print_a_minus)
-			ft_putsomething(false, '-', 0, global);
-		if (global->prec_print_minus)
-			global->flag_zero++;
 		if (type)
 		{
 			global->flag_minus = global->flag_minus - ft_strlen(s);
 			global->flag_zero = global->flag_zero - ft_strlen(s);
 			global->width_size = global->width_size - ft_strlen(s);
+			if (global->print_a_minus)
+				global->width_size--;
 		}
 		while (global->width_size > 0 && type)
 		{
@@ -53,6 +51,8 @@ void	ft_putsomething(bool type, char c, char *s, struct var *global)
 			global->width_size--;
 			global->final_size++;
 		}
+		if (global->print_a_minus)
+			ft_putsomething(false, '-', 0, global);
 		while (global->flag_zero > 0 && type)
 		{
 			ft_putchar_fd('0', 1);
