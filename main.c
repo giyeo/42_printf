@@ -244,5 +244,10 @@ int		main(void)
 	i = printf("%7.5s", "yolo"); printf(" %d\n", i);
 	i = ft_printf("%-7.5s", "yolo"); printf(" %d\n", i);
 	i = printf("%-7.5s", "yolo"); printf(" %d\n", i);
+
+	i = ft_printf("%3.1s", NULL); printf(" %d\n", i);
+	i = printf("%3.1s", NULL); printf(" %d\n", i);
+	i = ft_printf("%9.1s", NULL); printf(" %d\n", i);
+	i = printf("%9.1s", NULL); printf(" %d\n", i);
 	return (0);
 }

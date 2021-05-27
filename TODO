@@ -1,1 +1,13 @@
-Divide with error handling in type int and type chr;
+Test  101:  s_prec_1_width_3_s_null                                           [FAIL]   Last run 1 min ago
+Test  102:  s_prec_1_width_9_s_null                                           [FAIL]   Last run 1 min ago
+
+Test  105:  s_prec_1_lj_width_3_s_null                                        [FAIL]   Last run 1 min ago
+Test  106:  s_prec_1_lj_width_9_s_null                                        [FAIL]   Last run 1 min ago
+
+Test  111:  s_prec_perfect_width_3_s_null                                     [FAIL]   Last run 1 min ago
+Test  112:  s_prec_perfect_width_20_s_null                                    [FAIL]   Last run 1 min ago
+
+Test  119:  s_prec_8_lj_width_3_s_null                                        [FAIL]   Last run 1 min ago
+Test  120:  s_prec_8_lj_width_10_s_null                                       [FAIL]   Last run 1 min ago
+
+Test  122:  s_prec_09_lj_s_hidden_notrunc                                     [FAIL] 
