@@ -268,5 +268,7 @@ int		main(void)
 	i = printf("%.3u", 0); printf(" %d\n", i);
 	i = ft_printf("%2c", 'f'); printf(" %d\n", i);
 	i = printf("%2c", 'f'); printf(" %d\n", i);
+
+	i = ft_printf("%.3i", 0);
 	return (0);
 }
