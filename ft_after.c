@@ -57,7 +57,10 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 				ft_putsomething(true, 0, precision, global);
 			}
 			else
+			{
+				global->precision_size = 0;
 				ft_putsomething(true, 0, "(null)", global);
+			}
 			return ;
 		}
 		if (global->precision_size < (int)ft_strlen((char *)pointer))
