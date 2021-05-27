@@ -30,6 +30,12 @@ void	ft_putsomething(bool type, char c, char *s, struct var *global)
 {
 	if (!s)
 	{
+		while (global->width_size > 0 && type)
+		{
+			ft_putchar_fd(' ', 1);
+			global->width_size--;
+			global->final_size++;
+		}
 		ft_putchar_fd(c, 1);
 		if (type)
 			global->flag_minus -= 1;

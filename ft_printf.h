@@ -39,6 +39,7 @@ struct var
 
 int				ft_is_precision(const char *pointer, va_list lista, struct var *global);
 int				ft_prec_error_hand(int parameter, int d, struct var *global);
+void			ft_prec_error_hand_c(int d, struct var *global);
 int				ft_prec_error_hand_u(unsigned int u, struct var *global);
 int				ft_is_flag(const char *pointer, va_list lista, struct var *global);
 int				ft_is_width(const char *pointer, va_list lista, struct var *global);

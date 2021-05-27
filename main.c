@@ -266,5 +266,7 @@ int		main(void)
 	i = printf("%.5u", 2); printf(" %d\n", i);
 	i = ft_printf("%.3u", 0); printf(" %d\n", i);
 	i = printf("%.3u", 0); printf(" %d\n", i);
+	i = ft_printf("%2c", 'f'); printf(" %d\n", i);
+	i = printf("%2c", 'f'); printf(" %d\n", i);
 	return (0);
 }

@@ -25,12 +25,7 @@ int ft_next_nbr(const char *pointer)
 
 int main(void)
 {
-	int i = printf("%3.1s", NULL); printf(" %d\n", i); 
-	i = printf("%3.2s", NULL); printf(" %d\n", i);
-	i = printf("%3.3s", NULL); printf(" %d\n", i);
-	i = printf("%3.4s", NULL); printf(" %d\n", i);
-	i = printf("%3.5s", NULL); printf(" %d\n", i);
-	i = printf("%3.6s", NULL); printf(" %d\n", i);
-	i = printf("%3.7s", NULL); printf(" %d\n", i);
+	int i;
+	printf("%2c", 'c');
 	return (0);
 }

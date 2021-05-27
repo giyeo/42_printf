@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:06 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/27 17:37:43 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/27 18:04:46 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,10 @@ int	ft_prec_error_hand(int parameter, int d, struct var *global)
 	return d;
 }
 
+void	ft_prec_error_hand_c(int d, struct var *global)
+{
+	global->width_size -= 1;
+}
 
 int	ft_prec_error_hand_u(unsigned int u, struct var *global)
 {
