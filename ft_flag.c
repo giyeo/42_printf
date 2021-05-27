@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:21 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/26 19:12:12 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/27 17:16:48 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ int ft_is_flag(const char *pointer, va_list lista, struct var *global)
 	n = 0;
 	if (pointer[0] == '-' || (pointer[0] == '0' && pointer[1] == '-'))
 	{
+		if (pointer[1] == '.')
+		{
+			n++;
+			return n;
+		}
 		if (pointer[0] == '0')
 		{
 			check++;

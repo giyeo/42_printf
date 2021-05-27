@@ -250,8 +250,6 @@ int		main(void)
 	i = printf("%3.1s", NULL); printf(" %d\n", i);
 	i = ft_printf("%9.1s", NULL); printf(" %d\n", i);
 	i = printf("%9.1s", NULL); printf(" %d\n", i);
-	*/
-	static char *s_hidden = "hi low\0don't print me lol\0";
 	i = ft_printf("%3.6s", NULL); printf(" %d\n", i);
 	i = printf("%3.6s", NULL); printf(" %d\n", i);
 	i = ft_printf("%20.6s", NULL); printf(" %d\n", i);
@@ -260,6 +258,8 @@ int		main(void)
 	i = printf("%-3.8s", NULL); printf(" %d\n", i);
 	i = ft_printf("%-10.8s", NULL); printf(" %d\n", i);
 	i = printf("%-10.8s", NULL); printf(" %d\n", i);
+	*/
+	static char *s_hidden = "hi low\0don't print me lol\0";
 	i = ft_printf("%-.09s", s_hidden); printf(" %d\n", i);
 	i = printf("%-.09s", s_hidden); printf(" %d\n", i);
 	return (0);
