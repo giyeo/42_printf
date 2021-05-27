@@ -19,7 +19,7 @@ void		type_int(int parameter, int d, int i, struct var *global)
 		ft_putsomething(true, 0, "", global);
 		return;
 	}
-	if (i)
+	if (i || parameter == 'u')
 		i = ft_prec_error_hand_u(i, global);
 	if (d)
 		d = ft_prec_error_hand(parameter, d, global);

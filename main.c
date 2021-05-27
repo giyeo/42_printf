@@ -264,5 +264,7 @@ int		main(void)
 	i = printf("%-.09s", s_hidden); printf(" %d\n", i);
 	i = ft_printf("%.5u", 2); printf(" %d\n", i);
 	i = printf("%.5u", 2); printf(" %d\n", i);
+	i = ft_printf("%.3u", 0); printf(" %d\n", i);
+	i = printf("%.3u", 0); printf(" %d\n", i);
 	return (0);
 }
