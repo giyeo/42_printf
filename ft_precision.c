@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:06 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/27 16:28:28 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/27 17:37:43 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	ft_is_precision(const char *pointer, va_list lista, struct var *global)
 	return n;
 }
 
-int	ft_prec_error_hand(int parameter, int d, unsigned int i, struct var *global)
+int	ft_prec_error_hand(int parameter, int d, struct var *global)
 {
 	int n;
 	int original_zero;
@@ -140,8 +140,35 @@ int	ft_prec_error_hand(int parameter, int d, unsigned int i, struct var *global)
 				global->flag_zero++;
 		}
 	}
-	if (d)
-		return d;
-	else
-		return i;
+	return d;
 }
+
+
+int	ft_prec_error_hand_u(unsigned int u, struct var *global)
+{
+	int n;
+	int original_zero;
+
+	original_zero = global->flag_zero;
+
+	n = len_int(u);
+	if (n < global->precision_size)
+		global->flag_zero += (global->precision_size - n) + n;
+	else
+	{
+		if (global->zero_before && global->precision_size > 0)
+		{
+			global->width_size += global->flag_zero;
+			global->flag_zero = 0;
+		}
+		global->precision_size = 0;
+	}
+	if (global->zero_before && global->precision_size > 0)
+	{
+		global->flag_zero -= global->precision_size + (original_zero - global->precision_size);
+		global->width_size += n + (original_zero - global->precision_size);
+		global->precision_size = 0;
+	}
+	return u;
+}
+	

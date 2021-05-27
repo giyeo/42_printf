@@ -262,5 +262,7 @@ int		main(void)
 	static char *s_hidden = "hi low\0don't print me lol\0";
 	i = ft_printf("%-.09s", s_hidden); printf(" %d\n", i);
 	i = printf("%-.09s", s_hidden); printf(" %d\n", i);
+	i = ft_printf("%.5u", 2); printf(" %d\n", i);
+	i = printf("%.5u", 2); printf(" %d\n", i);
 	return (0);
 }
