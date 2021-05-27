@@ -66,6 +66,7 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 	}
 	if (parameter == 's')
 	{ 
+		global->precision_size = 0;
 		if (pointer == NULL)
 			ft_putsomething(true, 0, "(null)", global);
 		else if (precision != 0)

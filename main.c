@@ -232,8 +232,17 @@ int		main(void)
 	i = printf("%%-d 42 == %-d", INT_MIN); printf(" %d\n", i);
 	i = printf("%d", INT_MAX + 1); printf(" %d\n", i);
 	i = printf("%d", INT_MIN); printf(" %d\n", i);
-	*/
+	*///FIX I
+	/*
 	i = ft_printf("%.6i", -3); printf(" %d\n", i);
-	i = printf("%.6i", -3); printf(" %d\n", i);
+	i = printf("%.6i", -3); printf(" %d\n", i);*/
+	//FIX S
+	i = ft_printf("%.0s", "hello"); printf(" %d\n", i);
+	i = printf("%.0s", "hello"); printf(" %d\n", i);
+
+	i = ft_printf("%7.5s", "yolo"); printf(" %d\n", i);
+	i = printf("%7.5s", "yolo"); printf(" %d\n", i);
+	i = ft_printf("%-7.5s", "yolo"); printf(" %d\n", i);
+	i = printf("%-7.5s", "yolo"); printf(" %d\n", i);
 	return (0);
 }
