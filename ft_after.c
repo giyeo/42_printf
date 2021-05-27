@@ -25,7 +25,7 @@ void		type_int(int parameter, int d, int i, struct var *global)
 		d = ft_prec_error_hand(parameter, d, global);
 	if (parameter == 'c')
 	{
-		ft_prec_error_hand_c(d, global);
+		ft_prec_error_hand_c(global);
 		ft_putsomething(true, d, 0, global);
 	}
 	if (parameter == 'd')
