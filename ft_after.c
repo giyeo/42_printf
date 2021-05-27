@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void		type_int(int parameter, int d, unsigned int i, struct var *global)
+void		type_int(int parameter, int d, int i, struct var *global)
 {
 	if ((d == 0 && i == 0) && global->noPrecVal)
 	{

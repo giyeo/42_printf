@@ -215,9 +215,10 @@ int		main(void)
 
 	i = ft_printf("|%-5.3s|\n", "LYDI"); printf(" %d\n", i);
 	i = printf("|%-5.3s|\n", "LYDI"); printf(" %d\n", i);
-	*/
+	*//*
 	i = ft_printf("|%04i|", 42); printf(" %d\n", i);
 	i = ft_printf("|%05i|", 42); printf(" %d\n", i);
+
 	i = ft_printf("|%04.3i|", 42); printf(" %d\n", i);
 	i = ft_printf("|%04.2i|", 42); printf(" %d\n", i);
 	i = ft_printf("%%-d 42 == %-d", INT_MIN); printf(" %d\n", i);
@@ -231,5 +232,8 @@ int		main(void)
 	i = printf("%%-d 42 == %-d", INT_MIN); printf(" %d\n", i);
 	i = printf("%d", INT_MAX + 1); printf(" %d\n", i);
 	i = printf("%d", INT_MIN); printf(" %d\n", i);
+	*/
+	i = ft_printf("%.6i", -3); printf(" %d\n", i);
+	i = printf("%.6i", -3); printf(" %d\n", i);
 	return (0);
 }
