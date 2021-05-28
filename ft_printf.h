@@ -23,6 +23,7 @@
 
 struct var
 {
+	bool	precision_pass;
 	bool	noPrecVal;
 	bool	zero_before;
 	bool	zero_string;
