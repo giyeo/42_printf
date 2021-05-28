@@ -15,8 +15,16 @@
 char	*x_times_zero(int d)
 {
 	char *string;
+	int i;
 
-	string = (char *)calloc(d, sizeof(char));
+	i = 0;
+	string = (char*)malloc(sizeof(char) * d);
+	while (string[i] < d)
+	{
+		string[i] = '0';
+		i++;
+	}
+	string[d] = '\0';
 	return string;
 }
 
@@ -93,7 +101,7 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 		kk = tohex((unsigned long *)pointer);
 		if (global->precision_size > (int)ft_strlen(kk) + 1)
 		{
-			kk = ft_strjoin(x_times_zero(global->precision_size), tohex((unsigned long *)pointer));
+			kk = ft_strjoin(x_times_zero(global->precision_size - (int)ft_strlen(kk)), tohex((unsigned long *)pointer));
 			kk = ft_strjoin("0x", kk);
 		}
 		else
