@@ -269,8 +269,8 @@ int		main(void)
 
 	i = ft_printf("%.p", NULL);printf(" %d\n", i);
 	i =	printf("%.p", NULL);printf(" %d\n", i);
-	i = ft_printf("%.5p", NULL);printf(" %d\n", i);
-	i =	printf("%.5p", NULL);printf(" %d\n", i);
+	i = ft_printf("%5p", NULL);printf(" %d\n", i);
+	i =	printf("%5p", NULL);printf(" %d\n", i);
 	i = ft_printf("%.2p", NULL);printf(" %d\n", i);
 	i =	printf("%.2p", NULL);printf(" %d\n", i);
 	return (0);
