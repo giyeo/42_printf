@@ -48,10 +48,14 @@ void		type_int(int parameter, int d, int i, struct var *global)
 	}
 	if (parameter == 'x')
 	{
-		ft_putsomething(true, 0, ft_htoa_lower(i), global);
+		temp = ft_htoa_lower(i);
+		ft_putsomething(true, 0, temp, global);
 	}
 	if (parameter == 'X')
-		ft_putsomething(true, 0, ft_htoa_upper(i), global);
+	{
+		temp = ft_htoa_upper(i);
+		ft_putsomething(true, 0, temp, global);
+	}
 	if (temp != 0)
 		free(temp);
 }

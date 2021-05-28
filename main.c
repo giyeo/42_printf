@@ -272,8 +272,9 @@ int		main(void)
 	i =	printf("%5p", NULL);printf(" %d\n", i);
 	i =	ft_printf("%2.9p\n", 1234);printf(" %d\n", i);
 	i =	printf("%2.9p\n", 1234);printf(" %d\n", i);
+	(" %10p %-10p ", 0, 0)
 	*/
-	i = ft_printf(" %p %p ", LONG_MIN, LONG_MAX);printf(" %d\n", i);
-	i = printf(" %p %p ", LONG_MIN, LONG_MAX);printf(" %d\n", i);
+	i = ft_printf(" *%-*.*x* *%*.*x* ", 4, 5, 10, 10, 21, -10);printf(" %d\n", i);
+	i = printf(" *%-*.*x* *%*.*x* ", 4, 5, 10, 10, 21, -10);printf(" %d\n", i);
 	return (0);
 }
