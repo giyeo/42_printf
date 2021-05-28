@@ -273,6 +273,7 @@ int		main(void)
 	i =	ft_printf("%2.9p\n", 1234);printf(" %d\n", i);
 	i =	printf("%2.9p\n", 1234);printf(" %d\n", i);
 	*/
-	i = ft_printf(" %p ", -1);printf(" %d\n", i);
+	i = ft_printf(" %p %p ", LONG_MIN, LONG_MAX);printf(" %d\n", i);
+	i = printf(" %p %p ", LONG_MIN, LONG_MAX);printf(" %d\n", i);
 	return (0);
 }

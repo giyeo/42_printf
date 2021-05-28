@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:09:25 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/28 15:12:16 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/28 17:48:41 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,10 @@ void	ft_parameter_s(void *pointer, struct var *global)
 		if (pointer == NULL)
 			ft_putsomething(true, 0, "(null)", global);
 		else if (precision != 0)
+		{
 			ft_putsomething(true, 0, precision, global);
+			free(precision);
+		}
 		else
 			ft_putsomething(true, 0, (char *)pointer, global);
 }
