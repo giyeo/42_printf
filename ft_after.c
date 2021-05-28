@@ -59,6 +59,8 @@ void		type_int(int parameter, int d, int i, struct var *global)
 void		type_chr(int parameter, void *pointer, struct var *global)
 {
 	char *precision;
+	char *kk;
+	char *times_zero;
 
 	precision = 0;
 	if (parameter == 's' && global->precision_size > 0)
@@ -84,6 +86,7 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 			precision = ft_substr((char *)pointer, 0, global->precision_size);
 			global->precision_size = 0;
 		}
+		free(precision);
 	}
 	if (parameter == 's')
 	{ 
@@ -94,10 +97,10 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 			ft_putsomething(true, 0, precision, global);
 		else
 			ft_putsomething(true, 0, (char *)pointer, global);
+		free(precision);
 	}
 	if (parameter == 'p')
 	{
-		char *kk;
 		if (global->precision_size > 0 && !pointer)
 		{
 			ft_putsomething(false, 0, "0x", global);
@@ -109,8 +112,10 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 		kk = tohex((unsigned long *)pointer);
 		if (global->precision_size > (int)ft_strlen(kk) + 1)
 		{
-			kk = ft_strjoin(x_times_zero(global->precision_size - (int)ft_strlen(kk)), tohex((unsigned long *)pointer));
+			times_zero = x_times_zero(global->precision_size);
+			kk = ft_strjoin(times_zero - (int)ft_strlen(kk), tohex((unsigned long *)pointer));
 			kk = ft_strjoin("0x", kk);
+			free(times_zero);
 		}
 		else
 			kk = ft_strjoin("0x", tohex((unsigned long *)pointer));
@@ -119,6 +124,7 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 			ft_putsomething(true, 0, kk, global);
 		else
 			ft_putsomething(true, 0, "0x", global);
+		free(kk);
 	}
 }
 
