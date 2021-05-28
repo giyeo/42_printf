@@ -52,9 +52,6 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 {
 	char *precision;
 
-	int i;
-
-	i = global->precision_size;
 	precision = 0;
 	if (parameter == 's' && global->precision_size > 0)
 	{
@@ -93,7 +90,8 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 	if (parameter == 'p')
 	{
 		char *kk;
-		if (global->precision_size > ft_strlen(tohex((unsigned long *)pointer)) + 1)
+		kk = tohex((unsigned long *)pointer);
+		if (global->precision_size > ft_strlen(kk) + 1)
 		{
 			kk = ft_strjoin(x_times_zero(global->precision_size), tohex((unsigned long *)pointer));
 			kk = ft_strjoin("0x", kk);
