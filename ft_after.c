@@ -134,8 +134,12 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 		{
 			times_zero = x_times_zero(global->precision_size);
 			temp = tohex((unsigned long *)pointer);
+			free(kk);
 			kk = ft_strjoin(times_zero - (int)ft_strlen(kk), temp);
-			kk = ft_strjoin("0x", kk);
+			free(temp);
+			temp = kk;
+			free(kk);
+			kk = ft_strjoin("0x", temp);
 			free(temp);
 			free(times_zero);
 			free(kk);
@@ -144,6 +148,8 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 		{
 			temp = tohex((unsigned long *)pointer);
 			kk = ft_strjoin("0x", temp);
+			free(kk);
+			free(temp);
 		}
 		global->precision_size = 0;
 		if(!global->precision_pass || (global->precision_pass && pointer != NULL))
