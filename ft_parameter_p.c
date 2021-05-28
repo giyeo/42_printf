@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:04:43 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/28 16:37:27 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/28 16:47:58 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,34 @@ char	*x_times_zero(int d)
 	return string;
 }
 
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char	*pointerdest;
+	unsigned char	*pointersource;
+
+	pointerdest = dest;
+	pointersource = (unsigned char*)src;
+	if (pointerdest == 0 && pointersource == 0)
+		return (dest);
+	while (n-- > 0)
+		*pointerdest++ = *pointersource++;
+	return (dest);
+}
+
+char	*ft_strdup(const char *s)
+{
+	size_t	len;
+	char	*dup;
+
+	len = ft_strlen(s) + 1;
+	dup = malloc(len * sizeof(char));
+	if (dup)
+	{
+		ft_memcpy(dup, s, len);
+	}
+	return (dup);
+}
+
 void	ft_parameter_p(void *pointer, struct var *global)
 {
 	char *kk;
@@ -46,19 +74,27 @@ void	ft_parameter_p(void *pointer, struct var *global)
 	if (global->precision_size > (int)ft_strlen(kk) + 1)
 	{
 		times_zero = x_times_zero(global->precision_size - (int)ft_strlen(kk));
-		temp = tohex((unsigned long *)pointer);
+		temp = ft_strdup(kk);
+		free(kk);
 		kk = ft_strjoin(times_zero, temp);
-		temp = kk;
+		free(temp);
+		temp = ft_strdup(kk);
 		kk = ft_strjoin("0x", temp);
+		free(temp);
 	}
 	else
 	{
-		temp = tohex((unsigned long *)pointer);
+		temp = ft_strdup(kk);
+		free(kk);
 		kk = ft_strjoin("0x", temp);
+		free(temp);
 	}
 	global->precision_size = 0;
 	if(!global->precision_pass || (global->precision_pass && pointer != NULL))
+	{
 		ft_putsomething(true, 0, kk, global);
+		free(kk);
+	}
 	else
 		ft_putsomething(true, 0, "0x", global);
 }
