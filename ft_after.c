@@ -91,7 +91,7 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 	{
 		char *kk;
 		kk = tohex((unsigned long *)pointer);
-		if (global->precision_size > ft_strlen(kk) + 1)
+		if (global->precision_size > (int)ft_strlen(kk) + 1)
 		{
 			kk = ft_strjoin(x_times_zero(global->precision_size), tohex((unsigned long *)pointer));
 			kk = ft_strjoin("0x", kk);
