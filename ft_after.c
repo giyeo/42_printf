@@ -85,9 +85,11 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 	if (parameter == 'p')
 	{
 		global->precision_size = 0;
-		ft_putsomething(true, 0, "0x", global);
-		if (!global->precision_pass)
-			ft_putsomething(false, 0, tohex((unsigned long *)pointer), global);
+		char *kk = ft_strjoin("0x", tohex((unsigned long *)pointer));
+		if (global->precision_pass)
+			ft_putsomething(true, 0, kk, global);
+		else
+			ft_putsomething(true, 0, "0x", global);
 	}
 }
 
