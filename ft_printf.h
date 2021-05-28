@@ -23,6 +23,7 @@
 
 struct var
 {
+	bool	malloc_used;
 	bool	precision_pass;
 	bool	noPrecVal;
 	bool	zero_before;

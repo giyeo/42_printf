@@ -56,7 +56,7 @@ void		type_int(int parameter, int d, int i, struct var *global)
 		temp = ft_htoa_upper(i);
 		ft_putsomething(true, 0, temp, global);
 	}
-	if (temp != 0)
+	if (temp != 0 && temp != '0')
 		free(temp);
 }
 
