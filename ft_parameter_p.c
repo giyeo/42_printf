@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:04:43 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/28 16:11:56 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/28 16:37:27 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ void	ft_parameter_p(void *pointer, struct var *global)
 	}
 	if (global->precision_size > (int)ft_strlen(kk) + 1)
 	{
-		times_zero = x_times_zero(global->precision_size);
+		times_zero = x_times_zero(global->precision_size - (int)ft_strlen(kk));
 		temp = tohex((unsigned long *)pointer);
-		kk = ft_strjoin(times_zero - (int)ft_strlen(kk), temp);
+		kk = ft_strjoin(times_zero, temp);
 		temp = kk;
 		kk = ft_strjoin("0x", temp);
 	}
