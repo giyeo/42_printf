@@ -14,7 +14,6 @@
 
 void	init_global(struct var *global)
 {
-	global->malloc_used = false;
 	global->precision_pass = false;
 	global->noPrecVal = false;
 	global->zero_before = false;
@@ -32,7 +31,6 @@ void	init_global(struct var *global)
 
 void	reset_global(struct var *global)
 {
-	global->malloc_used = false;
 	global->precision_pass = false;
 	global->noPrecVal = false;
 	global->zero_before = false;
