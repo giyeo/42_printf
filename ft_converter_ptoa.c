@@ -36,5 +36,10 @@ static char		*pointeraddress(unsigned long int n)
 
 char	*tohex(unsigned long *pointer)
 {
-	return pointeraddress((unsigned long int)pointer);
+	char *temp;
+	char *temp2;
+	temp = pointeraddress((unsigned long int)pointer);
+	temp2 = temp;
+	free(temp);
+	return temp2;
 }

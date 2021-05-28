@@ -30,6 +30,9 @@ char	*x_times_zero(int d)
 
 void		type_int(int parameter, int d, int i, struct var *global)
 {
+	char *temp;
+
+	temp = 0;
 	if ((d == 0 && i == 0) && global->noPrecVal)
 	{
 		ft_putsomething(true, 0, "", global);
@@ -45,15 +48,32 @@ void		type_int(int parameter, int d, int i, struct var *global)
 		ft_putsomething(true, d, 0, global);
 	}
 	if (parameter == 'd')
-		ft_putsomething(true, 0, ft_itoa(d), global);
+	{
+		temp = ft_itoa(d);
+		ft_putsomething(true, 0, temp, global);
+	}
 	if (parameter == 'i')
+	{
+		temp = ft_itoa(d);
 		ft_putsomething(true, 0, ft_itoa(d), global);
+	}
 	if (parameter == 'u')
-		ft_putsomething(true, 0, ft_utoa(i), global);
+	{
+		temp = ft_utoa(i);
+		ft_putsomething(true, 0, temp, global);
+	}
 	if (parameter == 'x')
-		ft_putsomething(true, 0, ft_htoa_lower(i), global);
+	{
+		temp = ft_htoa_lower(i);
+		ft_putsomething(true, 0, temp, global);
+	}
 	if (parameter == 'X')
+	{
+		temp = ft_htoa_upper(i);
 		ft_putsomething(true, 0, ft_htoa_upper(i), global);
+	}
+	if (temp != 0)
+		free(temp);
 }
 
 void		type_chr(int parameter, void *pointer, struct var *global)
@@ -61,6 +81,7 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 	char *precision;
 	char *kk;
 	char *times_zero;
+	char *temp;
 
 	precision = 0;
 	if (parameter == 's' && global->precision_size > 0)
@@ -112,21 +133,27 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 		if (global->precision_size > (int)ft_strlen(kk) + 1)
 		{
 			times_zero = x_times_zero(global->precision_size);
-			kk = ft_strjoin(times_zero - (int)ft_strlen(kk), tohex((unsigned long *)pointer));
+			temp = tohex((unsigned long *)pointer);
+			kk = ft_strjoin(times_zero - (int)ft_strlen(kk), temp);
 			kk = ft_strjoin("0x", kk);
+			free(temp);
 			free(times_zero);
+			free(kk);
 		}
-		else
-			kk = ft_strjoin("0x", tohex((unsigned long *)pointer));
-		global->precision_size = 0;
-		if(!global->precision_pass || (global->precision_pass && pointer != NULL))
-			ft_putsomething(true, 0, kk, global);
 		else
 		{
-			ft_putsomething(true, 0, "0x", global);
-			return ;
+			temp = tohex((unsigned long *)pointer);
+			kk = ft_strjoin("0x", temp);
 		}
-		free(kk);
+		global->precision_size = 0;
+		if(!global->precision_pass || (global->precision_pass && pointer != NULL))
+		{
+			ft_putsomething(true, 0, kk, global);
+			free(kk);
+		}
+		else
+			ft_putsomething(true, 0, "0x", global);
+
 	}
 }
 

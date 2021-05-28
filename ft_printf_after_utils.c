@@ -55,30 +55,6 @@ int		counting_stars(char const *pointer)
 	}
 	return stars;
 }
-int		len_check(char const *pointer, va_list lista)
-{
-	va_list cpy_lista;
-	int print;
-	int stars;
-	va_copy(cpy_lista, lista);
-
-	stars = counting_stars(pointer);
-	while (stars > 0)
-	{
-		stars--;
-		va_arg(cpy_lista, int);
-	}
-	if (next_char(pointer) == 1)
-		print = (ft_strlen(va_arg(cpy_lista, char*)));
-	else if (next_char(pointer) == 2)
-		print = (ft_strlen(chtostr(va_arg(cpy_lista, int))));
-	else
-		print = ft_strlen(ft_itoa(va_arg(cpy_lista, int)));
-	if (print == 0)
-		return 1;
-	va_end(cpy_lista);
-	return print;
-}
 
 int 	is_type(char n)
 {

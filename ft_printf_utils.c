@@ -60,15 +60,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-char		*chtostr(int c)
-{
-	char *p;
-
-	p = malloc(sizeof(char)*1);
-	p[0] = (char)c;
-	return (p);
-}
-
 char			*ft_strjoin(char *s1, char const *s2)
 {
 	char			*pointer;
