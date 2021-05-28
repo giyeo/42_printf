@@ -83,6 +83,7 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 	char *times_zero;
 	char *temp;
 
+	kk = NULL;
 	precision = 0;
 	if (parameter == 's' && global->precision_size > 0)
 	{
