@@ -6,11 +6,27 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:04:43 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/28 15:08:39 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:20:51 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+char	*x_times_zero(int d)
+{
+	char *string;
+	int i;
+
+	i = 0;
+	string = (char*)malloc(sizeof(char) * d);
+	while (string[i] < d)
+	{
+		string[i] = '0';
+		i++;
+	}
+	string[d] = '\0';
+	return string;
+}
 
 void	ft_parameter_p(void *pointer, struct var *global)
 {

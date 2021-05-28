@@ -12,22 +12,6 @@
 
 #include "ft_printf.h"
 
-char	*x_times_zero(int d)
-{
-	char *string;
-	int i;
-
-	i = 0;
-	string = (char*)malloc(sizeof(char) * d);
-	while (string[i] < d)
-	{
-		string[i] = '0';
-		i++;
-	}
-	string[d] = '\0';
-	return string;
-}
-
 void		type_int(int parameter, int d, int i, struct var *global)
 {
 	char *temp;
