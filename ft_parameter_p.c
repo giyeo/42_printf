@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:04:43 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/28 15:20:51 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/28 16:11:56 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*x_times_zero(int d)
 
 	i = 0;
 	string = (char*)malloc(sizeof(char) * d);
-	while (string[i] < d)
+	while (i < d)
 	{
 		string[i] = '0';
 		i++;
@@ -34,7 +34,7 @@ void	ft_parameter_p(void *pointer, struct var *global)
 	char *times_zero;
 	char *temp;
 
-	kk = NULL;
+	kk = tohex((unsigned long *)pointer);
 	if (global->precision_size > 0 && !pointer)
 	{
 		ft_putsomething(false, 0, "0x", global);
