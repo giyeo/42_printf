@@ -55,7 +55,7 @@ void		type_int(int parameter, int d, int i, struct var *global)
 	if (parameter == 'i')
 	{
 		temp = ft_itoa(d);
-		ft_putsomething(true, 0, ft_itoa(d), global);
+		ft_putsomething(true, 0, temp, global);
 	}
 	if (parameter == 'u')
 	{
