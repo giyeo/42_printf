@@ -12,8 +12,10 @@
 
 #include "ft_printf.h"
 
-static char		*pointeraddress(unsigned long int n)
+char	*pointeraddress(unsigned long int n)
 {
+	char *temp;
+
 	if (n == 0)
 	return "0";
 	char *p = "abcdef";
@@ -31,10 +33,9 @@ static char		*pointeraddress(unsigned long int n)
 		i++;
 	}
 	result[i] = '\0';
-	return (ft_revstr(result));
-}
-
-char	*tohex(unsigned long *pointer)
-{
-	return pointeraddress((unsigned long int)pointer);
+	temp = ft_revstr(result);
+	free(result);
+	result = ft_strdup(temp);
+	free(temp);
+	return (result);
 }

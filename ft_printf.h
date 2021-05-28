@@ -38,6 +38,8 @@ struct var
 	int		final_size;
 };
 
+char			*pointeraddress(unsigned long int n);
+char			*ft_strdup(const char *s);
 void			ft_parameter_s(void *pointer, struct var *global);
 void			ft_parameter_p(void *pointer, struct var *global);
 int				ft_is_precision(const char *pointer, va_list lista, struct var *global);
@@ -52,7 +54,6 @@ int				ft_printf(const char *format, ...);
 char			*ft_itoa(int n);
 char			*ft_htoa_upper(unsigned int n);
 char			*ft_htoa_lower(unsigned int n);
-char			*tohex(unsigned long *pointer);
 int				next_char(const char *pointer);
 int				len_d(va_list lista, int s);
 const char		*sumpointer(const char *pointer, int dif);
