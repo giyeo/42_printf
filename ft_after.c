@@ -12,6 +12,14 @@
 
 #include "ft_printf.h"
 
+char	*x_times_zero(int d)
+{
+	char *string;
+
+	string = (char *)calloc(d, sizeof(char));
+	return string;
+}
+
 void		type_int(int parameter, int d, int i, struct var *global)
 {
 	if ((d == 0 && i == 0) && global->noPrecVal)
@@ -84,8 +92,15 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 	}
 	if (parameter == 'p')
 	{
+		char *kk;
+		if (global->precision_size > ft_strlen(tohex((unsigned long *)pointer)) + 1)
+		{
+			kk = ft_strjoin(x_times_zero(global->precision_size), tohex((unsigned long *)pointer));
+			kk = ft_strjoin("0x", kk);
+		}
+		else
+			kk = ft_strjoin("0x", tohex((unsigned long *)pointer));
 		global->precision_size = 0;
-		char *kk = ft_strjoin("0x", tohex((unsigned long *)pointer));
 		if(!global->precision_pass || (global->precision_pass && pointer != NULL))
 			ft_putsomething(true, 0, kk, global);
 		else
