@@ -37,6 +37,12 @@ void	ft_putsomething(bool type, char c, char *s, struct var *global)
 			global->final_size++;
 		}
 		ft_putchar_fd(c, 1);
+		while (global->flag_minus > 0 && type)
+		{
+			ft_putchar_fd(' ', 1);
+			global->flag_minus--;
+			global->final_size++;
+		}
 		if (type)
 			global->flag_minus -= 1;
 		global->final_size++;

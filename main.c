@@ -270,5 +270,6 @@ int		main(void)
 	i = printf("%2c", 'f'); printf(" %d\n", i);
 
 	i = ft_printf("%.3i", 0);
+	i = ft_printf("%-2c%-3c", 'a', 'v');
 	return (0);
 }
