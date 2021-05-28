@@ -14,6 +14,8 @@
 
 char		*ft_htoa_upper(unsigned int n)
 {
+	char *temp;
+
 	if (n == 0)
 	return "0";
 	char *p = "ABCDEF";
@@ -31,11 +33,17 @@ char		*ft_htoa_upper(unsigned int n)
 		i++;
 	}
 	result[i] = '\0';
-	return (ft_revstr(result));
+	temp = ft_revstr(result);
+	free(result);
+	result = ft_strdup(temp);
+	free(temp);
+	return (result);
 }
 
 char		*ft_htoa_lower(unsigned int n)
 {
+	char *temp;
+
 	if (n == 0)
 	return "0";
 	char *p = "abcdef";
@@ -53,5 +61,9 @@ char		*ft_htoa_lower(unsigned int n)
 		i++;
 	}
 	result[i] = '\0';
-	return (ft_revstr(result));
+	temp = ft_revstr(result);
+	free(result);
+	result = ft_strdup(temp);
+	free(temp);
+	return (result);
 }
