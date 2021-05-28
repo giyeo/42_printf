@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:04:43 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/28 16:47:58 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/28 16:51:44 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,10 @@ void	ft_parameter_p(void *pointer, struct var *global)
 		kk = ft_strjoin(times_zero, temp);
 		free(temp);
 		temp = ft_strdup(kk);
+		free(kk);
 		kk = ft_strjoin("0x", temp);
 		free(temp);
+		free(times_zero);
 	}
 	else
 	{
