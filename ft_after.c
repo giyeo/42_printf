@@ -99,6 +99,14 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 	{
 		char *kk;
 		kk = tohex((unsigned long *)pointer);
+		if (global->precision_size > 0 && !pointer)
+		{
+			ft_putsomething(false, 0, "0x", global);
+			global->flag_zero = global->precision_size;
+			global->precision_size = 0;
+			ft_putsomething(true, 0, "", global);
+			return ;
+		}
 		if (global->precision_size > (int)ft_strlen(kk) + 1)
 		{
 			kk = ft_strjoin(x_times_zero(global->precision_size - (int)ft_strlen(kk)), tohex((unsigned long *)pointer));
