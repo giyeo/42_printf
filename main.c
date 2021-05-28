@@ -265,7 +265,6 @@ int		main(void)
 
 	i = ft_printf("%.3i", 0);
 	i = ft_printf("%-2c%-3c", 'a', 'v');
-	*/
 
 	i = ft_printf("%.p", NULL);printf(" %d\n", i);
 	i =	printf("%.p", NULL);printf(" %d\n", i);
@@ -273,6 +272,7 @@ int		main(void)
 	i =	printf("%5p", NULL);printf(" %d\n", i);
 	i =	ft_printf("%2.9p\n", 1234);printf(" %d\n", i);
 	i =	printf("%2.9p\n", 1234);printf(" %d\n", i);
-	i = ft_printf("%.5p", 0);
+	*/
+	i = ft_printf("%x", 0);
 	return (0);
 }
