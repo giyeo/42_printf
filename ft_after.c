@@ -73,6 +73,7 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 				global->width_size--;
 				precision = ft_substr("(null)", 0, global->precision_size);
 				ft_putsomething(true, 0, precision, global);
+				free(precision);
 			}
 			else
 			{
@@ -86,7 +87,6 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 			precision = ft_substr((char *)pointer, 0, global->precision_size);
 			global->precision_size = 0;
 		}
-		free(precision);
 	}
 	if (parameter == 's')
 	{ 
@@ -97,7 +97,6 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 			ft_putsomething(true, 0, precision, global);
 		else
 			ft_putsomething(true, 0, (char *)pointer, global);
-		free(precision);
 	}
 	if (parameter == 'p')
 	{
@@ -123,7 +122,10 @@ void		type_chr(int parameter, void *pointer, struct var *global)
 		if(!global->precision_pass || (global->precision_pass && pointer != NULL))
 			ft_putsomething(true, 0, kk, global);
 		else
+		{
 			ft_putsomething(true, 0, "0x", global);
+			return ;
+		}
 		free(kk);
 	}
 }
