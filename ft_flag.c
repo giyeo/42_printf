@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:21 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/29 15:28:34 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/29 15:29:49 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int ft_is_flag(const char *pointer, va_list lista, struct var *global)
 	{
 		global->zero_before = true;
 		n++;
-		if (!ft_isdigit(pointer) && pointer != '*')
+		if (!ft_isdigit(pointer[1]) && pointer[1] != '*')
 		{
 			global->abort = true;
 			return n;
