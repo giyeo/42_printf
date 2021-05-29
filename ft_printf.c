@@ -14,6 +14,7 @@
 
 void	init_global(struct var *global)
 {
+	global->right_zero = 0;
 	global->precision_pass = false;
 	global->noPrecVal = false;
 	global->zero_before = false;
@@ -31,6 +32,7 @@ void	init_global(struct var *global)
 
 void	reset_global(struct var *global)
 {
+	global->right_zero = 0;
 	global->precision_pass = false;
 	global->noPrecVal = false;
 	global->zero_before = false;

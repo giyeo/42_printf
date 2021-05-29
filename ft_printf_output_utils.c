@@ -66,6 +66,19 @@ void	ft_putsomething(bool type, char c, char *s, struct var *global)
 				global->flag_minus -= global->flag_zero;
 			}
 		}
+		if (global->right_zero > 0)
+		{
+			if (global->width_size > 0)
+			{
+				global->flag_minus = global->width_size;
+				global->width_size = 0;
+			}
+			else if (global->flag_zero > 0)
+			{
+				global->flag_minus = global->flag_zero;
+				global->flag_zero = 0;
+			}
+		}
 		while (global->width_size > 0 && type)
 		{
 			ft_putchar_fd(' ', 1);
