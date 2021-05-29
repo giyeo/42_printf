@@ -281,7 +281,7 @@ int		main(void)
 	i = printf(" %*.0s %.2s ", 10, "123", "4567");printf(" %d\n", i);
 	i = ft_printf(" --0*%0*.0d*0 0*%0*.10d*0-- ", -21, INT_MAX, 21, INT_MIN);printf(" %d\n", i);
 	i = printf(" --0*%0*.0d*0 0*%0*.10d*0-- ", -21, INT_MAX, 21, INT_MIN);printf(" %d\n", i);
-	i = ft_printf("%0*.10d*0-- ",21, INT_MIN);printf(" %d\n", i);
-	i = printf("%0*.10d*0-- ",21, INT_MIN);printf(" %d\n", i);
+	i = ft_printf("%09.0d", UINT_MAX);printf(" %d\n", i);
+	i = printf("%09.0d", UINT_MAX);printf(" %d\n", i);
 	return (0);
 }
