@@ -279,7 +279,7 @@ int		main(void)
 
 	i = ft_printf(" %*.0s %.2s ", 10, "123", "4567");printf(" %d\n", i);
 	i = printf(" %*.0s %.2s ", 10, "123", "4567");printf(" %d\n", i);
-	i = ft_printf("%*.0s", 10, "123", "4567");printf(" %d\n", i);
-	i = printf("%*.0s", 10, "123", "4567");printf(" %d\n", i);
+	i = ft_printf("%0.s%0.s", "123", "4567");printf(" %d\n", i);
+	i = printf("%0.s%0.s", "123", "4567");printf(" %d\n", i);
 	return (0);
 }
