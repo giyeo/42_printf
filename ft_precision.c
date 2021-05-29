@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:06 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/29 17:55:30 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/29 18:10:48 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,6 @@ int	ft_is_precision(const char *pointer, va_list lista, struct var *global)
 	if(pointer[0] == '.')
 	{
 		global->precision_pass = true;
-		/*
-		if (pointer[1] == '0' && pointer[2] == 'd')
-		{
-			n += 2;
-			global->precision_size = 1;
-			return n;
-		}
-		*/
 		if (pointer[1] == '0' && pointer[2] == 's')
 		{
 			n += 2;
