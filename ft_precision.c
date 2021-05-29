@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:06 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/29 16:57:35 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/29 17:04:37 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int	ft_prec_error_hand(int parameter, int d, struct var *global)
 {
 	int n;
 	int original_zero;
+	char *temp;
 
 	original_zero = global->flag_zero;
 	if (parameter == 'd')
@@ -90,7 +91,9 @@ int	ft_prec_error_hand(int parameter, int d, struct var *global)
 			if (global->flag_zero == 0)
 				global->flag_zero++;
 		}
-		n = ft_strlen(ft_itoa(d));
+		temp = ft_itoa(d);
+		n = ft_strlen(temp);
+		free(temp);
 		if (n < global->precision_size)
 			global->flag_zero += (global->precision_size - n) + n;
 		else
@@ -121,7 +124,9 @@ int	ft_prec_error_hand(int parameter, int d, struct var *global)
 			if (global->flag_zero == 0)
 				global->flag_zero++;
 		}
-		n = len_int(d);
+		temp = ft_itoa(d);
+		n = ft_strlen(temp);
+		free(temp);
 		if (n < global->precision_size)
 			global->flag_zero += (global->precision_size - n) + n;
 		else
