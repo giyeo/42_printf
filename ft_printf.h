@@ -41,7 +41,7 @@ struct var
 
 char			*pointeraddress(unsigned long int n);
 char			*ft_strdup(const char *s);
-void			ft_parameter_s(void *pointer, struct var *global);
+void			ft_parameter_s(char *pointer, struct var *global);
 void			ft_parameter_p(void *pointer, struct var *global);
 int				ft_is_precision(const char *pointer, va_list lista, struct var *global);
 int				ft_prec_error_hand(int parameter, int d, struct var *global);

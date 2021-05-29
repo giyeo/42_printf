@@ -67,7 +67,7 @@ void		type_int(int parameter, int d, int i, struct var *global)
 void	type_chr(int parameter, void *pointer, struct var *global)
 {
 	if (parameter == 's')
-		ft_parameter_s(pointer, global);
+		ft_parameter_s((char *)pointer, global);
 	if (parameter == 'p')
 		ft_parameter_p(pointer, global);
 }
@@ -83,6 +83,8 @@ void	ft_after(const char *pointer, va_list lista, struct var *global)
 	if (global->abort)
 	{
 		ft_putsomething(true, 0, "", global);
+		if(is_type(pointer[i]))
+			va_arg(lista, void*);
 		return ;
 	}
 	if (pointer[i] == '%')

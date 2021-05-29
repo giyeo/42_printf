@@ -6,16 +6,18 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:09:25 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/28 17:48:41 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/05/29 15:03:10 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_parameter_s(void *pointer, struct var *global)
+void	ft_parameter_s(char *pointer, struct var *global)
 {
 	char *precision;
+	int	check;
 
+	check = 0;
 	precision = 0;
 	if (global->precision_size > 0)
 	{
@@ -36,9 +38,10 @@ void	ft_parameter_s(void *pointer, struct var *global)
 			}
 			return ;
 		}
-		if (global->precision_size < (int)ft_strlen((char *)pointer))
+		check = (int)ft_strlen(pointer);
+		if (global->precision_size < check)
 		{
-			precision = ft_substr((char *)pointer, 0, global->precision_size);
+			precision = ft_substr(pointer, 0, global->precision_size);
 			global->precision_size = 0;
 		}
 	}
@@ -51,5 +54,5 @@ void	ft_parameter_s(void *pointer, struct var *global)
 			free(precision);
 		}
 		else
-			ft_putsomething(true, 0, (char *)pointer, global);
+			ft_putsomething(true, 0, pointer, global);
 }

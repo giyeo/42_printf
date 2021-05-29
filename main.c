@@ -273,8 +273,15 @@ int		main(void)
 	i =	ft_printf("%2.9p\n", 1234);printf(" %d\n", i);
 	i =	printf("%2.9p\n", 1234);printf(" %d\n", i);
 	(" %10p %-10p ", 0, 0)
-	*/
+	
 	i = ft_printf(" %x ", 0);printf(" %d\n", i);
-	i = printf(" %x ", 0);printf(" %d\n", i);printf(" %d\n", i);
+	i = printf(" %x ", 0);printf(" %d\n", i);printf(" %d\n", i);*/
+
+	i = ft_printf("%*.s%.1s", 10, "123", "4567");printf(" %d\n", i);
+	i = printf("%*.s%.1s", 10, "123", "4567");printf(" %d\n", i);
+	i = ft_printf("%.1s" "4567");printf(" %d\n", i);
+	i = printf("%.1s" "4567");printf(" %d\n", i);
+	i = ft_printf(" %*.0s %.2s ", 10, "123", "4567");printf(" %d\n", i);
+	i = printf(" %*.0s %.2s ", 10, "123", "4567");printf(" %d\n", i);
 	return (0);
 }
