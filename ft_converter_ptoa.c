@@ -19,7 +19,7 @@ char	*pointeraddress(unsigned long int n)
 	if (n == 0)
 	return "0";
 	char *p = "abcdef";
-	char *result = (char *)malloc(sizeof(char) * hex_len(n) + 1);
+	char *result = (char *)malloc(sizeof(char) * (hex_len(n) + 1));
 	int i;
 
 	i = 0;

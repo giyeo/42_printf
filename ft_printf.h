@@ -73,7 +73,7 @@ void			ft_putsomething(bool type, char c, char *s, struct var *global);
 char			*int_to_str(long int n, int len, char *result, int counter);
 int				len_int(long long n);
 int				power(long int n, int p);
-int				hex_len(int n);
+int				hex_len(unsigned long int n);
 char			*ft_utoa(unsigned int n);
 char			*ft_revstr(char *result);
 size_t			ft_strlen(const char *pointer);

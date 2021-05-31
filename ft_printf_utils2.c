@@ -39,7 +39,7 @@ int			len_int(long long n)
 	return (counter);
 }
 
-int			hex_len(int n)
+int		hex_len(unsigned long int n)
 {
 	int i;
 
