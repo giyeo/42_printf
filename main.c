@@ -276,7 +276,7 @@ int		main(void)
 	
 	i = ft_printf(" %x ", 0);printf(" %d\n", i);
 	i = printf(" %x ", 0);printf(" %d\n", i);printf(" %d\n", i);*/
-
+	/*
 	i = ft_printf(" %*.0s %.2s ", 10, "123", "4567");printf(" %d\n", i);
 	i = printf(" %*.0s %.2s ", 10, "123", "4567");printf(" %d\n", i);
 	i = ft_printf(" --0*%0*.0d*0 0*%0*.10d*0-- ", -21, INT_MAX, 21, INT_MIN);printf(" %d\n", i);
@@ -288,6 +288,13 @@ int		main(void)
 	i = printf(" --0*%-0*.20d*0 0*%-0*.10d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
 	i = ft_printf(" --0*%-0*.2d*0 0*%-0*.2d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
 	i = printf(" --0*%-0*.2d*0 0*%-0*.2d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
+	*/
+	i = ft_printf(" %p %p ", LONG_MIN, LONG_MAX);printf(" %d\n", i);
+	i = printf(" %p %p ", LONG_MIN, LONG_MAX);printf(" %d\n", i);
+	i = ft_printf(" %p %p ", ULONG_MAX, -ULONG_MAX);printf(" %d\n", i);
+	i = printf(" %p %p ", ULONG_MAX, -ULONG_MAX);printf(" %d\n", i);
+	i = ft_printf(" %10p %-10p ", 0, 0);printf(" %d\n", i);
+	i = printf(" %10p %-10p ", 0, 0);printf(" %d\n", i);
 
 	return (0);
 }
