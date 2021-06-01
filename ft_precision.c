@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:06 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/29 18:10:48 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/06/01 17:36:38 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ int	ft_is_precision(const char *pointer, va_list lista, struct var *global)
 		}
 		n++;
 		check = ft_atoi(&pointer[1]);
+		if (global->width_size > 0 && (pointer[1] == '0' && check == 0))
+		{
+			n++;
+			global->noPrecVal = true;
+			return n;
+		}
 		if (check == 0 && pointer[1] == '0')
 		{
 			n++;

@@ -291,8 +291,18 @@ int		main(void)
 	i = ft_printf(" %p %p ", LONG_MIN, LONG_MAX);printf(" %d\n", i);
 	i = printf(" %p %p ", LONG_MIN, LONG_MAX);printf(" %d\n", i);
 	*/
-	i = ft_printf(" %p %p ", ULONG_MAX, -ULONG_MAX);printf(" %d\n", i);
-	i = printf(" %p %p ", ULONG_MAX, -ULONG_MAX);printf(" %d\n", i);
+	i = ft_printf(" --0*%-0*.20d*0 0*%-0*.10d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
+	i = printf(" --0*%-0*.20d*0 0*%-0*.10d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
+	i = ft_printf(" --0*%-0*.2d*0 0*%-0*.2d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
+	i = printf(" --0*%-0*.2d*0 0*%-0*.2d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
+	i = ft_printf(" --0*%-0*.3d*0 0*%-0*.3d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
+	i = printf(" --0*%-0*.3d*0 0*%-0*.3d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
+	i = ft_printf(" --0*%-0*.4d*0 0*%-0*.4d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
+	i = printf(" --0*%-0*.4d*0 0*%-0*.4d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
+	i = ft_printf("%10.0d", UINT_MAX);printf(" %d\n", i);
+	i = printf("%10.0d", UINT_MAX);printf(" %d\n", i);
+	i = ft_printf("%11.0d", UINT_MAX);printf(" %d\n", i);
+	i = printf("%11.0d", UINT_MAX);printf(" %d\n", i);
 
 	return (0);
 }
