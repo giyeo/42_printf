@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:21 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/06/01 18:36:49 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/06/01 18:46:30 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,11 @@ int ft_is_flag(const char *pointer, va_list lista, struct var *global)
 			global->flag_zero = ft_atoi(&pointer[current]);
 			n += len_int(ft_atoi(&pointer[current]));
 			n += how_many_zeros(&pointer[current]);
+		}
+		if (global->flag_zero < 0)
+		{
+			global->flag_minus = global->flag_zero * -1;
+			global->flag_zero = 0;
 		}
 	}
 	return n;

@@ -33,10 +33,10 @@ struct var
 	bool	abort;
 	bool	prec_print_minus;
 	bool	print_a_minus;
-	int		flag_minus;
-	int		flag_zero;
-	int		width_size;
-	int		precision_size;
+	long int	flag_minus;
+	long int	flag_zero;
+	long int	width_size;
+	long int	precision_size;
 	int		final_size;
 };
 
