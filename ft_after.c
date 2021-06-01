@@ -49,6 +49,15 @@ void		type_int(int parameter, int d, int i, struct var *global)
 	if (parameter == 'x')
 	{
 		temp = ft_htoa_lower(i);
+		int nb = 0;
+		if (global->precision_size > ft_strlen(temp))
+		{
+			while (nb < global->precision_size - ft_strlen(temp))
+			{
+				ft_putsomething(false, 0, "0", global);
+				nb++;
+			}
+		}
 		ft_putsomething(true, 0, temp, global);
 		if (temp[0] == '0' && ft_strlen(temp) == 1)
 			return;

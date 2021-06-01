@@ -290,7 +290,6 @@ int		main(void)
 	i = printf(" --0*%-0*.2d*0 0*%-0*.2d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
 	i = ft_printf(" %p %p ", LONG_MIN, LONG_MAX);printf(" %d\n", i);
 	i = printf(" %p %p ", LONG_MIN, LONG_MAX);printf(" %d\n", i);
-	*/
 	i = ft_printf("%-0*.20d %-0*.10d", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
 	i = printf("%-0*.20d %-0*.10d", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
 	i = ft_printf(" --0*%-0*.2d*0 0*%-0*.2d*0-- ", -21, CHAR_MAX, 21, CHAR_MIN);printf(" %d\n", i);
@@ -305,5 +304,32 @@ int		main(void)
 
 	i = ft_printf(" --0*%0*.0d*0 0*%0*.10d*0-- ", -21, LONG_MAX, 21, LONG_MIN);printf(" %d\n", i);
 	i = printf(" --0*%0*.0d*0 0*%0*.10d*0-- ", -21, LONG_MAX, 21, LONG_MIN);printf(" %d\n", i);
+	*/
+	i = ft_printf(" %-3.2x %10.42x ", 10, -10); printf(" %d\n", i);
+	i = printf(" %-3.2x %10.42x ", 10, -10); printf(" %d\n", i);
+	i = ft_printf(" 0*%0-*.*x*0 0*%0*.*x*0 ", 2, 6, 102, 21, 10, -101); printf(" %d\n", i);
+	i = printf(" 0*%0-*.*x*0 0*%0*.*x*0 ", 2, 6, 102, 21, 10, -101); printf(" %d\n", i);
+	i = ft_printf(" 0*%-0*.10x*0 0*%-0*.0x*0 ", 21, 1021, 21, -1011); printf(" %d\n", i);
+	i = printf(" 0*%-0*.10x*0 0*%-0*.0x*0 ", 21, 1021, 21, -1011); printf(" %d\n", i);
+	i = ft_printf(" --0*%0*.0x*0 0*%0*.10x*0-- ", -21, INT_MAX, 21, INT_MIN); printf(" %d\n", i);
+	i = printf(" --0*%0*.0x*0 0*%0*.10x*0-- ", -21, INT_MAX, 21, INT_MIN); printf(" %d\n", i);
+	i = ft_printf(" --0*%-0*.20x*0 0*%-0*.10x*0-- ", -21, CHAR_MAX, 21, CHAR_MIN); printf(" %d\n", i);
+	i = printf(" --0*%-0*.20x*0 0*%-0*.10x*0-- ", -21, CHAR_MAX, 21, CHAR_MIN); printf(" %d\n", i);
+	i = ft_printf("%9.10x", UINT_MAX); printf(" %d\n", i);
+	i = printf("%9.10x", UINT_MAX); printf(" %d\n", i);
+	i = ft_printf("%10.10x", UINT_MAX); printf(" %d\n", i); 
+	i = printf("%10.10x", UINT_MAX); printf(" %d\n", i); 
+	i = ft_printf("%11.10x", UINT_MAX); printf(" %d\n", i); 
+	i = printf("%11.10x", UINT_MAX); printf(" %d\n", i); 
+	i = ft_printf("%-9.10x", UINT_MAX); printf(" %d\n", i); 
+	i = printf("%-9.10x", UINT_MAX); printf(" %d\n", i); 
+	i = ft_printf("%-10.10x", UINT_MAX); printf(" %d\n", i);
+	i = printf("%-10.10x", UINT_MAX); printf(" %d\n", i); 
+	i = ft_printf("%09.10x", UINT_MAX); printf(" %d\n", i); 
+	i = printf("%09.10x", UINT_MAX); printf(" %d\n", i); 
+	i = ft_printf("%010.10x", UINT_MAX); printf(" %d\n", i);
+	i = printf("%010.10x", UINT_MAX); printf(" %d\n", i);  
+	i = ft_printf("%011.10x", UINT_MAX); printf(" %d\n", i);
+	i = printf("%011.10x", UINT_MAX); printf(" %d\n", i);
 	return (0);
 }
