@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:21 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/06/01 18:07:35 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/06/01 18:27:44 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,18 +96,6 @@ int ft_is_flag(const char *pointer, va_list lista, struct var *global)
 		{
 			check = va_arg(lista, int);
 			global->flag_zero = check;
-			if (global->flag_zero > 0 && global->right_zero > 0)
-			{
-				n++;
-				return n;
-			}
-			if (global->flag_zero < 0 && global->right_zero > 0)
-			{
-				global->flag_minus = global->flag_zero * -1;
-				global->flag_zero = 0;
-				n++;
-				return n;
-			}
 			if (!global->flag_zero)
 				return 0;
 			n++;
