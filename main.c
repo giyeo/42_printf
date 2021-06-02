@@ -331,5 +331,8 @@ int		main(void)
 	i = printf("%010.10x", UINT_MAX); printf(" %d\n", i);  
 	i = ft_printf("%011.10x", UINT_MAX); printf(" %d\n", i);
 	i = printf("%011.10x", UINT_MAX); printf(" %d\n", i);
+
+	i = ft_printf("%011.2x", UINT_MAX + 1);printf(" %d\n", i);
+	i = printf("%011.2x", UINT_MAX + 1);
 	return (0);
 }
