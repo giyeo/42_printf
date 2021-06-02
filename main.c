@@ -335,6 +335,9 @@ int		main(void)
 	i = ft_printf("%011.2x", UINT_MAX + 1);printf(" %d\n", i);
 	i = printf("%011.2x", UINT_MAX + 1);printf(" %d\n", i);
 */
-	i = ft_printf(" %-3.2X %10.42X ", 1, -1);
+	ft_printf("%%0i 42 == |%0i|", 42);printf(" %d\n", i);
+	printf("%%0i 42 == |%0i|", 42);printf(" %d\n", i);
+	ft_printf("%%0d 0000042 == |%0d|", 0000042);printf(" %d\n", i);
+	printf("%%0d 0000042 == |%0d|", 0000042);printf(" %d\n", i);
 	return (0);
 }
