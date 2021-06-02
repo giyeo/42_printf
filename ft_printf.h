@@ -41,6 +41,7 @@ struct var
 	int		final_size;
 };
 
+int				ft_len_after(const char *format);
 char			*pointeraddress(unsigned long int n);
 char			*ft_strdup(const char *s);
 void			ft_parameter_s(char *pointer, struct var *global);
