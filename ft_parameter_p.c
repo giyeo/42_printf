@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:04:43 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/06/02 15:42:10 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/06/02 15:44:41 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	ft_parameter_p(void *pointer, struct var *global)
 	char *times_zero;
 	char *temp;
 
+	if (pointer == 0)
+		return ;
 	kk = pointeraddress((unsigned long int)pointer);
 	if (global->precision_size > 0 && !pointer)
 	{
