@@ -12,27 +12,9 @@
 
 #include "ft_printf.h"
 
-char	*joinzeros(char *str, long int nb_0)
-{
-	char *zeros;
-	char *second_zeros;
-
-	zeros = "";
-	while(nb_0 > 0)
-	{
-		second_zeros = ft_strjoin("0", zeros);
-		zeros = ft_strdup(second_zeros);
-		free(second_zeros);
-		nb_0--;
-	}
-	second_zeros = ft_strjoin(zeros, str);
-	free(zeros);
-	return second_zeros;
-}
-void		type_int(int parameter, int d, int i, struct var *global)
+void		type_int(int parameter, int d, unsigned int i, struct var *global)
 {
 	char *temp;
-	char *temp2;
 
 	global->precision_x = global->precision_size;
 	temp = 0;
@@ -41,10 +23,12 @@ void		type_int(int parameter, int d, int i, struct var *global)
 		ft_putsomething(true, 0, "", global);
 		return;
 	}
-	if (i || parameter == 'u' || parameter == 'x' || parameter == 'X')
+	if (parameter == 'u')
 		i = ft_prec_error_hand_u(i, global);
 	if (((parameter == 'd' || parameter == 'i') || d) && parameter != 'c')
 		d = ft_prec_error_hand(parameter, d, global);
+	if (parameter == 'x' || parameter == 'X')
+		ft_prec_error_hand_x(i, global);
 	if (parameter == 'c')
 	{
 		ft_prec_error_hand_c(global);
@@ -68,13 +52,6 @@ void		type_int(int parameter, int d, int i, struct var *global)
 	if (parameter == 'x')
 	{
 		temp = ft_htoa_lower(i);
-		if (global->precision_x > (long)ft_strlen(temp))
-		{
-			temp2 = joinzeros(temp, global->precision_x - ft_strlen(temp));
-			free(temp);
-			temp = ft_strdup(temp2);
-			free(temp2);
-		}
 		ft_putsomething(true, 0, temp, global);
 		if (temp[0] == '0' && ft_strlen(temp) == 1)
 			return;

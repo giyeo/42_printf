@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:28:06 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/06/01 18:16:12 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/06/01 22:51:48 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,12 +182,47 @@ int	ft_prec_error_hand_u(unsigned int u, struct var *global)
 			global->width_size += global->flag_zero;
 			global->flag_zero = 0;
 		}
+		global->precision_x = global->precision_size;
 		global->precision_size = 0;
 	}
 	if (global->zero_before && global->precision_size > 0)
 	{
 		global->flag_zero -= global->precision_size + (original_zero - global->precision_size);
 		global->width_size += n + (original_zero - global->precision_size);
+		global->precision_x = global->precision_size;
+		global->precision_size = 0;
+	}
+	return u;
+}
+
+int	ft_prec_error_hand_x(unsigned int u, struct var *global)
+{
+	int n;
+	char *temp;
+	int original_zero;
+
+	original_zero = global->flag_zero;
+
+	temp = ft_htoa_lower(u);
+	n = ft_strlen(temp);
+	free(temp);
+	if (n < global->precision_size)
+		global->flag_zero += (global->precision_size - n) + n;
+	else
+	{
+		if (global->zero_before && global->precision_size > 0)
+		{
+			global->width_size += global->flag_zero;
+			global->flag_zero = 0;
+		}
+		global->precision_x = global->precision_size;
+		global->precision_size = 0;
+	}
+	if (global->zero_before && global->precision_size > 0)
+	{
+		global->flag_zero -= global->precision_size + (original_zero - global->precision_size);
+		global->width_size += n + (original_zero - global->precision_size);
+		global->precision_x = global->precision_size;
 		global->precision_size = 0;
 	}
 	return u;
