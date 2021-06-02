@@ -44,10 +44,14 @@ char		*ft_htoa_lower(unsigned int n)
 {
 	char *temp;
 
+	char *result = (char *)malloc(sizeof(char) * 1 + 1);
+	result[0] = '0';
+	result[1] = '\0';
 	if (n == 0)
-	return "0";
+	return result;
+	free(result);
 	char *p = "abcdef";
-	char *result = (char *)malloc(sizeof(char) * hex_len(n) + 1);
+	result = (char *)malloc(sizeof(char) * hex_len(n) + 1);
 	int i;
 
 	i = 0;
