@@ -20,8 +20,9 @@ char		*ft_htoa_upper(unsigned int n)
 	result[0] = '0';
 	result[1] = '\0';
 	if (n == 0)
-	return "0";
+	return result;
 	char *p = "ABCDEF";
+	free(result);
 	result = (char *)malloc(sizeof(char) * hex_len(n) + 1);
 	int i;
 

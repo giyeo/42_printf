@@ -335,6 +335,6 @@ int		main(void)
 	i = ft_printf("%011.2x", UINT_MAX + 1);printf(" %d\n", i);
 	i = printf("%011.2x", UINT_MAX + 1);printf(" %d\n", i);
 */
-	i = ft_printf(" %.x ", 0);printf(" %d\n", i);
+	i = ft_printf(" %-3.2X %10.42X ", 1, -1);
 	return (0);
 }
