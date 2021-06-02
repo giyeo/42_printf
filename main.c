@@ -304,7 +304,7 @@ int		main(void)
 
 	i = ft_printf(" --0*%0*.0d*0 0*%0*.10d*0-- ", -21, LONG_MAX, 21, LONG_MIN);printf(" %d\n", i);
 	i = printf(" --0*%0*.0d*0 0*%0*.10d*0-- ", -21, LONG_MAX, 21, LONG_MIN);printf(" %d\n", i);
-	*/
+
 	i = ft_printf(" %-3.2x %10.42x ", 10, -10); printf(" %d\n", i);
 	i = printf(" %-3.2x %10.42x ", 10, -10); printf(" %d\n", i);
 	i = ft_printf(" 0*%0-*.*x*0 0*%0*.*x*0 ", 2, 6, 102, 21, 10, -101); printf(" %d\n", i);
@@ -333,6 +333,8 @@ int		main(void)
 	i = printf("%011.10x", UINT_MAX); printf(" %d\n", i);
 
 	i = ft_printf("%011.2x", UINT_MAX + 1);printf(" %d\n", i);
-	i = printf("%011.2x", UINT_MAX + 1);
+	i = printf("%011.2x", UINT_MAX + 1);printf(" %d\n", i);
+*/
+	i = ft_printf(" %.x ", 0);printf(" %d\n", i);
 	return (0);
 }

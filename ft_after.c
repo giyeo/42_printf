@@ -53,15 +53,11 @@ void		type_int(int parameter, int d, unsigned int i, struct var *global)
 	{
 		temp = ft_htoa_lower(i);
 		ft_putsomething(true, 0, temp, global);
-		if (temp[0] == '0' && ft_strlen(temp) == 1)
-			return;
 	}
 	if (parameter == 'X')
 	{
 		temp = ft_htoa_upper(i);
 		ft_putsomething(true, 0, temp, global);
-		if (temp[0] == '0' && ft_strlen(temp) == 1)
-			return;
 	}
 	if (temp != 0)
 		free(temp);
