@@ -68,8 +68,7 @@ void		type_int(int parameter, int d, int i, struct var *global)
 	if (parameter == 'x')
 	{
 		temp = ft_htoa_lower(i);
-		int nb = 0;
-		if (global->precision_x > ft_strlen(temp))
+		if (global->precision_x > (long)ft_strlen(temp))
 		{
 			temp2 = joinzeros(temp, global->precision_x - ft_strlen(temp));
 			free(temp);
