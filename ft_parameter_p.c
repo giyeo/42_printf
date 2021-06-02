@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:04:43 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/06/02 15:44:41 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/06/02 15:57:55 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,14 @@ void	ft_parameter_p(void *pointer, struct var *global)
 	char *kk;
 	char *times_zero;
 	char *temp;
-
-	if (pointer == 0)
+	
+	if (pointer == NULL)
+	{
+		ft_putsomething(true, 0, "0x0", global);
 		return ;
+	}
 	kk = pointeraddress((unsigned long int)pointer);
-	if (global->precision_size > 0 && !pointer)
+	if (global->precision_size > 0 && pointer == 0)
 	{
 		ft_putsomething(false, 0, "0x", global);
 		global->flag_zero = global->precision_size;
@@ -100,5 +103,7 @@ void	ft_parameter_p(void *pointer, struct var *global)
 		free(kk);
 	}
 	else
+	{
 		ft_putsomething(true, 0, "0x", global);
+	}
 }
