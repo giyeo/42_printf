@@ -335,9 +335,11 @@ int		main(void)
 	i = ft_printf("%011.2x", UINT_MAX + 1);printf(" %d\n", i);
 	i = printf("%011.2x", UINT_MAX + 1);printf(" %d\n", i);
 */
-	ft_printf("%%0i 42 == |%0i|", 42);printf(" %d\n", i);
-	printf("%%0i 42 == |%0i|", 42);printf(" %d\n", i);
-	ft_printf("%%0d 0000042 == |%0d|", 0000042);printf(" %d\n", i);
-	printf("%%0d 0000042 == |%0d|", 0000042);printf(" %d\n", i);
+
+	static char *s_hidden = "hi low\0don't print me lol\0";
+	i = ft_printf("%-00s", s_hidden);printf(" %d\n", i);
+	i = printf("%-00s", s_hidden);printf(" %d\n", i);
+	i = ft_printf("%.p", NULL);printf(" %d\n", i);
+	i = printf("%.p", NULL);printf(" %d\n", i);
 	return (0);
 }
