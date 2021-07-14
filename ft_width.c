@@ -6,23 +6,23 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:27:50 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/05/29 15:25:05 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/07/08 14:06:51 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_is_width(const char *pointer, va_list lista, struct var *global)
+int	ft_is_width(const char *pointer, va_list lista, t_var *global)
 {
-	int n;
+	int	n;
 
 	n = 0;
-	if(ft_isdigit(pointer[0]))
+	if (ft_isdigit(pointer[0]))
 	{
 		global->width_size = ft_atoi(&pointer[0]);
 		n = len_int(ft_atoi(&pointer[0]));
 	}
-	if(pointer[0] == '*')
+	if (pointer[0] == '*')
 	{
 		n++;
 		global->width_size = va_arg(lista, int);
@@ -30,10 +30,10 @@ int	ft_is_width(const char *pointer, va_list lista, struct var *global)
 		{
 			global->flag_minus = global->width_size * -1;
 			global->width_size = 0;
-			return n;
+			return (n);
 		}
 		if (!global->width_size)
-			return n;
+			return (n);
 	}
-	return n;
+	return (n);
 }

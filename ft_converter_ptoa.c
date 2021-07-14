@@ -14,14 +14,15 @@
 
 char	*pointeraddress(unsigned long int n)
 {
-	char *temp;
+	char	*temp;
+	int		i;
+	char	*p;
+	char	*result;
 
 	if (n == 0)
-	return "0";
-	char *p = "abcdef";
-	char *result = (char *)malloc(sizeof(char) * (hex_len(n) + 1));
-	int i;
-
+		return ("0");
+	p = "abcdef";
+	result = (char *)malloc(sizeof(char) * (hex_len(n) + 1));
 	i = 0;
 	while (n > 0)
 	{

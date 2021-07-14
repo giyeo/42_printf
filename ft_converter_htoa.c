@@ -12,19 +12,9 @@
 
 #include "ft_printf.h"
 
-char		*ft_htoa_upper(unsigned int n)
+void	ft_htoa_calc(char *result, char *p, unsigned int n)
 {
-	char *temp;
-
-	char *result = (char *)malloc(sizeof(char) * 1 + 1);
-	result[0] = '0';
-	result[1] = '\0';
-	if (n == 0)
-	return result;
-	char *p = "ABCDEF";
-	free(result);
-	result = (char *)malloc(sizeof(char) * hex_len(n) + 1);
-	int i;
+	int		i;
 
 	i = 0;
 	while (n > 0)
@@ -37,6 +27,23 @@ char		*ft_htoa_upper(unsigned int n)
 		i++;
 	}
 	result[i] = '\0';
+}
+
+char	*ft_htoa_upper(unsigned int n)
+{
+	char	*temp;
+	char	*result;
+	char	*p;
+
+	p = "ABCDEF";
+	result = (char *)malloc(sizeof(char) * 1 + 1);
+	result[0] = '0';
+	result[1] = '\0';
+	if (n == 0)
+		return (result);
+	free(result);
+	result = (char *)malloc(sizeof(char) * hex_len(n) + 1);
+	ft_htoa_calc(result, p, n);
 	temp = ft_revstr(result);
 	free(result);
 	result = ft_strdup(temp);
@@ -44,31 +51,21 @@ char		*ft_htoa_upper(unsigned int n)
 	return (result);
 }
 
-char		*ft_htoa_lower(unsigned int n)
+char	*ft_htoa_lower(unsigned int n)
 {
-	char *temp;
+	char	*temp;
+	char	*result;
+	char	*p;
 
-	char *result = (char *)malloc(sizeof(char) * 1 + 1);
+	p = "abcdef";
+	result = (char *)malloc(sizeof(char) * 1 + 1);
 	result[0] = '0';
 	result[1] = '\0';
 	if (n == 0)
-	return result;
+		return (result);
 	free(result);
-	char *p = "abcdef";
 	result = (char *)malloc(sizeof(char) * hex_len(n) + 1);
-	int i;
-
-	i = 0;
-	while (n > 0)
-	{
-		if ((n % 16) < 10)
-			result[i] = n % 16 + '0';
-		else
-			result[i] = p[((n % 16) % 10)];
-		n /= 16;
-		i++;
-	}
-	result[i] = '\0';
+	ft_htoa_calc(result, p, n);
 	temp = ft_revstr(result);
 	free(result);
 	result = ft_strdup(temp);

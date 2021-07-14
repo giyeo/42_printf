@@ -12,55 +12,53 @@
 
 #include "ft_printf.h"
 
-int			next_char(const char *pointer)
+int	is_type(char n)
 {
-	while (*pointer != '\0')
+	if (n == 's' || n == 'p' || n == 'c' || n == 'd'
+		|| n == 'i' || n == 'x' || n == 'X' || n == 'u'
+		|| n == '%')
+		return (1);
+	return (0);
+}
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char	*pointerdest;
+	unsigned char	*pointersource;
+
+	pointerdest = dest;
+	pointersource = (unsigned char *)src;
+	if (pointerdest == 0 && pointersource == 0)
+		return (dest);
+	while (n-- > 0)
+		*pointerdest++ = *pointersource++;
+	return (dest);
+}
+
+char	*ft_strdup(const char *s)
+{
+	size_t	len;
+	char	*dup;
+
+	len = ft_strlen(s) + 1;
+	dup = malloc(len * sizeof(char));
+	if (dup)
 	{
-		if (*pointer == 'c')
-			return (2);
-		if (*pointer == 'd' || *pointer == 'i')
-			return (0);
-		if (*pointer == 's')
-			return (1);
-		pointer++;
+		ft_memcpy(dup, s, len);
 	}
-	return (-1);
+	return (dup);
 }
 
-int			len_d(va_list lista, int s)
+void	ft_putchar_fd(char c, int fd)
 {
-	va_list cpy_lista;
-	int print;
-	va_copy(cpy_lista, lista);
-	if (!s)
-		print = len_int(va_arg(cpy_lista, int));
-	else
-		print = len_int(va_arg(cpy_lista, int) * -1);
-	va_end(cpy_lista);
-	return print;
+	write(fd, &c, sizeof(char));
 }
 
-int		counting_stars(char const *pointer)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
-	int stars;
-
-	stars = 0;
-	i = 1;
-	while (is_type(pointer[i]) == 0)
+	while (*s != '\0')
 	{
-		if(pointer[i] == '*')
-			stars++;
-		i += 1;
+		ft_putchar_fd(*s, fd);
+		s++;
 	}
-	return stars;
-}
-
-int 	is_type(char n)
-{
-	if (n == 's' || n == 'p' || n == 'c' || n == 'd' ||
-		n == 'i' || n == 'x' || n == 'X' || n == 'u' ||
-		n == '%')
-		return 1;
-	return 0;
 }

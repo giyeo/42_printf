@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-size_t		ft_strlen(const char *pointer)
+size_t	ft_strlen(const char *pointer)
 {
-	size_t counter;
+	size_t	counter;
 
 	counter = 0;
 	while (pointer[counter] != '\0')
@@ -22,7 +22,7 @@ size_t		ft_strlen(const char *pointer)
 	return (counter);
 }
 
-char		*ft_revstr(char *result)
+char	*ft_revstr(char *result)
 {
 	char	*rev_result;
 	int		result_len;
@@ -37,7 +37,7 @@ char		*ft_revstr(char *result)
 		i++;
 	}
 	rev_result[i] = '\0';
-	return rev_result;
+	return (rev_result);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -60,7 +60,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-char			*ft_strjoin(char *s1, char const *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
 	char			*pointer;
 	size_t			i;

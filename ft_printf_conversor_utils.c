@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-char		*int_to_str(long int n, int len, char *result, int counter)
+char	*int_to_str(long int n, int len, char *result, int counter)
 {
-	int original;
+	int	original;
 
 	original = len + counter;
 	while (len > 0)
@@ -28,9 +28,9 @@ char		*int_to_str(long int n, int len, char *result, int counter)
 	return (result);
 }
 
-int		calc_atoi(const char *str, int len, int counter)
+int	calc_atoi(const char *str, int len, int counter)
 {
-	int result;
+	int	result;
 
 	result = 0;
 	while (counter < len)
@@ -46,7 +46,7 @@ int		calc_atoi(const char *str, int len, int counter)
 	return (result);
 }
 
-int				ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int		len;
 	int		final_result;

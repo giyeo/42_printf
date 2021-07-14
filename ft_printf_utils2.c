@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-int			power(long int n, int p)
+int	power(long int n, int p)
 {
-	int result;
+	int	result;
 
 	result = 1;
 	while (p > 0)
@@ -25,9 +25,9 @@ int			power(long int n, int p)
 	return (result);
 }
 
-int			len_int(long long n)
+int	len_int(long long n)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	while (n > 9)
@@ -39,27 +39,30 @@ int			len_int(long long n)
 	return (counter);
 }
 
-int		hex_len(unsigned long int n)
+int	hex_len(unsigned long int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while ((n /= 16) > 0)
+	while (n > 0)
+	{
+		n /= 16;
 		i++;
-	return i + 1;
+	}
+	return (i + 1);
 }
 
-int		ft_isdigit(int argument)
+int	ft_isdigit(int argument)
 {
 	if (argument >= 48 && argument <= 57)
 		return (1);
 	return (0);
 }
 
-int		ft_isspace(int chr)
+int	ft_isspace(int chr)
 {
-	if (chr == '\n' || chr == '\t' || chr == '\v' ||
-	chr == '\r' || chr == '\f' || chr == ' ')
+	if (chr == '\n' || chr == '\t' || chr == '\v'
+		|| chr == '\r' || chr == '\f' || chr == ' ')
 		return (1);
 	else
 		return (0);

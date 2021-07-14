@@ -10,7 +10,8 @@ SRC = 	ft_printf.c ft_after.c \
 		ft_printf_output_utils.c ft_printf_conversor_utils.c \
 		ft_printf_after_utils.c \
 		ft_width.c ft_flag.c ft_precision.c \
-		ft_parameter_s.c ft_parameter_p.c 
+		ft_parameter_s.c ft_parameter_p.c ft_precision_utils.c \
+		ft_precision_utils2.c ft_flag_utils.c ft_flag_utils2.c
 
 OBS = $(SRC:.c=.o)
 

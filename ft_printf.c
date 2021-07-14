@@ -12,10 +12,14 @@
 
 #include "ft_printf.h"
 
-void	init_global(struct var *global)
+void	init_global(t_var *global)
 {
+	global->crt = 0;
+	global->check = 1;
+	global->o_zero = 0;
 	global->right_zero = 0;
 	global->precision_x = 0;
+	global->flag_check = false;
 	global->precision_pass = false;
 	global->noPrecVal = false;
 	global->zero_before = false;
@@ -27,14 +31,18 @@ void	init_global(struct var *global)
 	global->flag_minus = 0;
 	global->flag_zero = 0;
 	global->width_size = 0;
-	global->precision_size = 0;
+	global->prec_size = 0;
 	global->final_size = 0;
 }
 
-void	reset_global(struct var *global)
+void	reset_global(t_var *global)
 {
+	global->crt = 0;
+	global->check = 1;
+	global->o_zero = 0;
 	global->precision_x = 0;
 	global->right_zero = 0;
+	global->flag_check = false;
 	global->precision_pass = false;
 	global->noPrecVal = false;
 	global->zero_before = false;
@@ -46,24 +54,24 @@ void	reset_global(struct var *global)
 	global->flag_minus = 0;
 	global->flag_zero = 0;
 	global->width_size = 0;
-	global->precision_size = 0;
+	global->prec_size = 0;
 }
 
-int		ft_len_after(const char *format)
+int	ft_len_after(const char *format)
 {
 	int	i;
 
 	i = 0;
 	while (is_type(format[i]) == 0)
 		i++;
-	return i;
+	return (i);
 }
 
-int		ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	struct var global;
-	va_list lista;
-	unsigned int i;
+	t_var			global;
+	va_list			lista;
+	unsigned int	i;
 
 	init_global(&global);
 	va_start(lista, format);
@@ -75,12 +83,12 @@ int		ft_printf(const char *format, ...)
 			ft_after((&format[i + 1]), lista, &global);
 			i += ft_len_after(&format[i] + 1) + 1;
 			if (global.error)
-				return 0;
+				return (0);
 			reset_global(&global);
 		}
 		else
 			ft_putsomething(false, format[i], 0, &global);
-		i++;	
+		i++;
 	}
 	va_end(lista);
 	return (global.final_size);

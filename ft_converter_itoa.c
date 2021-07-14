@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	long int	number;
 	char		*result;
